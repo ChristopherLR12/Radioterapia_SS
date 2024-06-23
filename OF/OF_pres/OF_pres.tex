@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{rotating}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage[mathscr]{euscript}
 \usepackage[dvipsnames,svgnames,table]{xcolor}
 \usepackage{multicol}
@@ -68,10 +69,25 @@
 \begin{frame}
     \frametitle{Output Factor}
 
+    \be
+      OF_{z_{ref}}(S,MV) = \frac{D(z_{ref},S,f,MV)}{D_{ref}(z_{ref},10 \times 10,f,MV)}
+    \ee
+
+    \vspace{10pt}
+
+    \textit{Parámetros:}
+
     \begin{itemize}
-          \item  $D_{w}$ es la base de la experiencia y los ensayos clínicos actuales.
-          \item La calibración se hace con referencia al agua.
+      \item Distancia fuente-maniquí: $1000 \, mm$
+      \item Profundidad del detector desde la superficie del maniquí: $100 \, mm$
     \end{itemize}
+
+    \textit{Comparación:}
+    \begin{itemize}
+      \item VB respecto al TB
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{frame}
 
@@ -83,15 +99,40 @@
 \end{frame}
 
 \begin{frame}
-
-      \vspace{1cm}
+      \frametitle{Campos cuadrados}
 
       \begin{figure}
             \centering
-            \includegraphics[width=1\textwidth]{15X_s.pdf}
+            \includegraphics[width=0.63\textwidth]{15X_s.pdf}
       \end{figure}
 
 \end{frame}
+
+\begin{frame}
+      \frametitle{Error relativo / Campos rectangulares}
+
+      \begin{figure}
+            \centering
+            \includegraphics[width=0.55\textwidth]{15X_hm1.pdf}
+      \end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+      \begin{figure}
+            \centering
+            \includegraphics[width=0.63\textwidth]{15X_hm2.pdf}
+      \end{figure}
+
+      \vspace{-20pt}
+      \begin{flushright}
+      \tiny{Error relativo promedio = $0.212 \%$}
+      \end{flushright}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \Section{6X FFF}
 
@@ -100,16 +141,151 @@
       \textbf{\itshape\scshape Energía = 6X FFF} 
 \end{frame}
 
-\Section{Extras}
+\begin{frame}
+      \frametitle{Campos cuadrados}
+
+      \begin{figure}
+            \centering
+            \includegraphics[width=0.63\textwidth]{6FFF_s.pdf}
+      \end{figure}
+
+\end{frame}
+
+\begin{frame}
+      \frametitle{Error relativo / Campos rectangulares}
+
+      \begin{figure}
+            \centering
+            \includegraphics[width=0.55\textwidth]{6FFF_hm1.pdf}
+      \end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+      \begin{figure}
+            \centering
+            \includegraphics[width=0.63\textwidth]{6FFF_hm2.pdf}
+      \end{figure}
+
+      \vspace{-20pt}
+      \begin{flushright}
+      \tiny{Error relativo promedio = $0.346 \%$}
+      \end{flushright}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section{Extras 15X}
 
 \begin{frame}[standout]
       \centering\LARGE
-      \textbf{\itshape\scshape Extras}
+      \textbf{\itshape\scshape Extras 15X}
 \end{frame}
 
-\End
-\begin{frame}[standout,bg=white.png]
-      \centering
+\begin{frame}
+      \vspace{1cm}
+      \begin{figure}
+            \centering
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{15X_3.pdf}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{15X_4.pdf}
+            \end{subfigure}
+      \end{figure}
 \end{frame}
+
+\begin{frame}
+      \vspace{1cm}
+      \begin{figure}
+            \centering
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{15X_10.pdf}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{15X_20.pdf}
+            \end{subfigure}
+      \end{figure}
+\end{frame}
+
+\begin{frame}
+      \vspace{1cm}
+      \begin{figure}
+            \centering
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{15X_30.pdf}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{15X_40.pdf}
+            \end{subfigure}
+      \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+\Section{Extras 6X FFF}
+
+\begin{frame}[standout]
+      \centering\LARGE
+      \textbf{\itshape\scshape Extras 6X FFF}
+\end{frame}
+
+\begin{frame}
+      \vspace{1cm}
+      \begin{figure}
+            \centering
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{6FFF_3.pdf}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{6FFF_7.pdf}
+            \end{subfigure}
+      \end{figure}
+\end{frame}
+
+\begin{frame}
+      \vspace{1cm}
+      \begin{figure}
+            \centering
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{6FFF_7.pdf}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{6FFF_10.pdf}
+            \end{subfigure}
+      \end{figure}
+\end{frame}
+
+\begin{frame}
+      \vspace{1cm}
+      \begin{figure}
+            \centering
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{6FFF_15.pdf}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{6FFF_20.pdf}
+            \end{subfigure}
+      \end{figure}
+\end{frame}
+
+\begin{frame}
+      \vspace{1cm}
+      \begin{figure}
+            \centering
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{6FFF_30.pdf}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.49\linewidth}
+                  \includegraphics[width=\linewidth]{6FFF_40.pdf}
+            \end{subfigure}
+      \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%
+
+\End
 
 \end{document}
