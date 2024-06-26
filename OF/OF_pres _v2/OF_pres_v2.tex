@@ -1,0 +1,164 @@
+\documentclass[aspectratio=169,xcolor=dvipsnames,t]{beamer}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[mathscr]{euscript}
+\usepackage[dvipsnames,svgnames,table]{xcolor}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{physics}
+\usepackage[version=4]{mhchem}
+\usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{wrapfig}
+\usepackage{ragged2e}
+\justifying
+
+\usepackage{bookmark}
+
+\usepackage{etoolbox}
+\usepackage{textcase}
+\makeatletter
+\patchcmd{\beamer@Section}{\Section}{\Section{\MakeTextUppercase}{}{}}{}{}
+\patchcmd{\beamer@Subsection}{\Subsection}{\Subsection{\MakeTextUppercase}{}{}}{}{}
+\makeatother
+
+\usepackage[backend=biber,citestyle=numeric-comp,bibstyle=apa,sorting=none]{biblatex}
+\bibliography{ref}
+\makeatletter
+\RequireBibliographyStyle{numeric}
+\makeatother
+
+\newcommand{\be}{\begin{equation*}}
+\newcommand{\ee}{\end{equation*}}
+\newcommand{\ble}[1]{\begin{equation} \label{#1}}
+\newcommand{\bae}{\begin{eqnarray}}
+\newcommand{\eae}{\end{eqnarray}}
+\newcommand{\pl}{\left(}
+\newcommand{\pr}{\right)}
+\newcommand{\kl}{\left[}
+\newcommand{\kr}{\right]}
+
+\setbeamertemplate{footline}[frame number]
+
+\usetheme{Arguelles}
+
+%%%%%%%%%%%%%%%%%%%% Opciones título %%%%%%%%%%%%%%%
+
+\title{Comparación del Output Factor del VB respecto al TB / Versión 2}
+%\subtitle{INCan}
+
+\date{\today}
+\author{Christopher López Ruiz}
+\institute{INCan}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frame[plain,bg=fondo.jpg]{\titlepage}
+
+\Section{Output Factor}
+
+\begin{frame}
+    \frametitle{Output Factor}
+
+    \be
+      OF_{z_{ref}}(S,MV) = \frac{D(z_{ref},S,f,MV)}{D_{ref}(z_{ref},10 \times 10,f,MV)}
+    \ee
+
+    \vspace{10pt}
+
+    \textit{Parámetros:}
+
+    \begin{itemize}
+      \item Distancia fuente-maniquí: $1000 \, mm$
+      \item Profundidad del detector desde la superficie del maniquí: $100 \, mm$
+    \end{itemize}
+
+    \textit{Comparación:}
+    \begin{itemize}
+      \item VB respecto al TB
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{frame}
+
+\Section{15X}
+
+\begin{frame}[standout]
+      \centering\LARGE
+      \textbf{\itshape\scshape Energía = 15X}
+\end{frame}
+
+
+\begin{frame}
+      \frametitle{Error relativo / Campos rectangulares}
+
+      \begin{figure}
+            \centering
+            \includegraphics[width=0.55\textwidth]{15X_hm1.pdf}
+      \end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+      \begin{figure}
+            \centering
+            \includegraphics[width=0.63\textwidth]{15X_hm2.pdf}
+      \end{figure}
+
+      \vspace{-20pt}
+      \begin{flushright}
+      \tiny{Error relativo promedio = $0.184 \%$}
+      \end{flushright}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section{6X FFF}
+
+\begin{frame}[standout]
+      \centering\LARGE
+      \textbf{\itshape\scshape Energía = 6X FFF} 
+\end{frame}
+
+
+\begin{frame}
+      \frametitle{Error relativo / Campos rectangulares}
+
+      \begin{figure}
+            \centering
+            \includegraphics[width=0.55\textwidth]{6FFF_hm1.pdf}
+      \end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+      \begin{figure}
+            \centering
+            \includegraphics[width=0.63\textwidth]{6FFF_hm2.pdf}
+      \end{figure}
+
+      \vspace{-20pt}
+      \begin{flushright}
+      \tiny{Error relativo promedio = $0.346 \%$}
+      \end{flushright}
+
+\end{frame}
+
+%%%%%%%%%%%%
+
+\End
+
+\end{document}
