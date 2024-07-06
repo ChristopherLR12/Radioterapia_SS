@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.24)  5 JUL 2024 23:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.24)  6 JUL 2024 00:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1451,7 +1451,7 @@ LaTeX Font Info:    Font shape `T1/Alegreya-OsF/m/n' in size <10> not available
 (Font)              Font shape `T1/Alegreya-OsF/regular/n' tried instead on input line 62.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/regular/n' will be
 (Font)              scaled to size 10.0pt on input line 62.
-<fondo.jpg, id=71, 2569.6pt x 1445.4pt>
+<fondo.jpg, id=85, 2569.6pt x 1445.4pt>
 File: fondo.jpg Graphic file (type jpg)
 <use fondo.jpg>
 Package pdftex.def Info: fondo.jpg  used on input line 62.
@@ -1460,54 +1460,54 @@ Package pdftex.def Info: fondo.jpg  used on input line 62.
 
 {C:/Users/c-lop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/alegreya/algr_p7kywn.enc}{C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/alegreya/algr_u7nq5p.enc} <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/fondo.jpg>]
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/b/n' in size <17.28> not available
-(Font)              Font shape `T1/Alegreya-OsF/bold/n' tried instead on input line 69.
+(Font)              Font shape `T1/Alegreya-OsF/bold/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/bold/n' will be
-(Font)              scaled to size 17.28pt on input line 69.
+(Font)              scaled to size 17.28pt on input line 71.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/b/it' in size <17.28> not available
-(Font)              Font shape `T1/Alegreya-OsF/bold/it' tried instead on input line 69.
+(Font)              Font shape `T1/Alegreya-OsF/bold/it' tried instead on input line 71.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/bold/it' will be
-(Font)              scaled to size 17.28pt on input line 69.
+(Font)              scaled to size 17.28pt on input line 71.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/b/scit' in size <17.28> not available
-(Font)              Font shape `T1/Alegreya-OsF/bold/scit' tried instead on input line 69.
+(Font)              Font shape `T1/Alegreya-OsF/bold/scit' tried instead on input line 71.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/bold/scit' will be
-(Font)              scaled to size 17.28pt on input line 69.
+(Font)              scaled to size 17.28pt on input line 71.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/m/n' in size <4> not available
-(Font)              Font shape `T1/Alegreya-OsF/regular/n' tried instead on input line 69.
+(Font)              Font shape `T1/Alegreya-OsF/regular/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/regular/n' will be
-(Font)              scaled to size 4.0pt on input line 69.
+(Font)              scaled to size 4.0pt on input line 71.
  [2{C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/alegreya/algr_dte76s.enc}
 
 {C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/alegreya/algr_hxyeky.enc}]
-<tarjeta.jpg, id=154, 1800.7275pt x 893.3375pt>
+<tarjeta.jpg, id=178, 1800.7275pt x 893.3375pt>
 File: tarjeta.jpg Graphic file (type jpg)
 <use tarjeta.jpg>
-Package pdftex.def Info: tarjeta.jpg  used on input line 88.
+Package pdftex.def Info: tarjeta.jpg  used on input line 90.
 (pdftex.def)             Requested size: 179.25114pt x 88.91641pt.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/b/n' in size <10.95> not available
-(Font)              Font shape `T1/Alegreya-OsF/bold/n' tried instead on input line 88.
+(Font)              Font shape `T1/Alegreya-OsF/bold/n' tried instead on input line 90.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/bold/n' will be
-(Font)              scaled to size 10.95pt on input line 88.
+(Font)              scaled to size 10.95pt on input line 90.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-OsF/m/n' in size <10.95> not available
-(Font)              Font shape `T1/AlegreyaSans-OsF/regular/n' tried instead on input line 88.
+(Font)              Font shape `T1/AlegreyaSans-OsF/regular/n' tried instead on input line 90.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-OsF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 88.
+(Font)              scaled to size 10.95pt on input line 90.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-OsF/m/n' in size <8> not available
-(Font)              Font shape `T1/AlegreyaSans-OsF/regular/n' tried instead on input line 88.
+(Font)              Font shape `T1/AlegreyaSans-OsF/regular/n' tried instead on input line 90.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-OsF/regular/n' will be
-(Font)              scaled to size 8.0pt on input line 88.
-LaTeX Font Info:    Trying to load font information for U+zeur on input line 88.
+(Font)              scaled to size 8.0pt on input line 90.
+LaTeX Font Info:    Trying to load font information for U+zeur on input line 90.
  (C:\Users\c-lop\AppData\Local\Programs\MiKTeX\tex/latex/eulervm\uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
 ) (C:\Users\c-lop\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeus on input line 88.
+LaTeX Font Info:    Trying to load font information for U+zeus on input line 90.
  (C:\Users\c-lop\AppData\Local\Programs\MiKTeX\tex/latex/eulervm\uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
 ) (C:\Users\c-lop\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-eus.cfg
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeuex on input line 88.
+LaTeX Font Info:    Trying to load font information for U+zeuex on input line 90.
  (C:\Users\c-lop\AppData\Local\Programs\MiKTeX\tex/latex/eulervm\uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 ) (C:\Users\c-lop\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
@@ -1516,32 +1516,32 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/m/n' in size <8> not available
-(Font)              Font shape `T1/Alegreya-OsF/regular/n' tried instead on input line 88.
+(Font)              Font shape `T1/Alegreya-OsF/regular/n' tried instead on input line 90.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/regular/n' will be
-(Font)              scaled to size 8.0pt on input line 88.
+(Font)              scaled to size 8.0pt on input line 90.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/m/it' in size <8> not available
-(Font)              Font shape `T1/Alegreya-OsF/regular/it' tried instead on input line 88.
+(Font)              Font shape `T1/Alegreya-OsF/regular/it' tried instead on input line 90.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/regular/it' will be
-(Font)              scaled to size 8.0pt on input line 88.
+(Font)              scaled to size 8.0pt on input line 90.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/m/it' in size <6> not available
-(Font)              Font shape `T1/Alegreya-OsF/regular/it' tried instead on input line 88.
+(Font)              Font shape `T1/Alegreya-OsF/regular/it' tried instead on input line 90.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/regular/it' will be
-(Font)              scaled to size 6.0pt on input line 88.
+(Font)              scaled to size 6.0pt on input line 90.
  [3
 
  <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/tarjeta.jpg>]
-<tiposa.pdf, id=194, 410.05981pt x 101.08707pt>
+<tiposa.pdf, id=224, 410.05981pt x 101.08707pt>
 File: tiposa.pdf Graphic file (type pdf)
 <use tiposa.pdf>
-Package pdftex.def Info: tiposa.pdf  used on input line 106.
+Package pdftex.def Info: tiposa.pdf  used on input line 108.
 (pdftex.def)             Requested size: 239.00558pt x 58.9205pt.
  [4
 
  <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/tiposa.pdf>]
-<ct.jpeg, id=273, 253.94875pt x 199.74625pt>
+<ct.jpeg, id=309, 253.94875pt x 199.74625pt>
 File: ct.jpeg Graphic file (type jpg)
 <use ct.jpeg>
-Package pdftex.def Info: ct.jpeg  used on input line 126.
+Package pdftex.def Info: ct.jpeg  used on input line 128.
 (pdftex.def)             Requested size: 159.333pt x 125.32875pt.
  [5
 
@@ -1550,54 +1550,58 @@ Package pdftex.def Info: ct.jpeg  used on input line 126.
 ] [7
 
 ]
-<p1.pdf, id=389, 845.62384pt x 390.40796pt>
+<p1.pdf, id=443, 845.62384pt x 390.40796pt>
 File: p1.pdf Graphic file (type pdf)
 <use p1.pdf>
-Package pdftex.def Info: p1.pdf  used on input line 163.
+Package pdftex.def Info: p1.pdf  used on input line 167.
 (pdftex.def)             Requested size: 219.08743pt x 101.14624pt.
  [8
 
- <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/p1.pdf>] [9
+ <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/p1.pdf>]
+<p2.pdf, id=496, 742.81923pt x 180.53703pt>
+File: p2.pdf Graphic file (type pdf)
+<use p2.pdf>
+Package pdftex.def Info: p2.pdf  used on input line 184.
+(pdftex.def)             Requested size: 278.83578pt x 67.76732pt.
+ [9
+
+ <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/p2.pdf>] [10
+
+] [11
 
 ]
-<ruleta.jpg, id=474, 1129.21875pt x 752.8125pt>
+<ruleta.jpg, id=659, 1129.21875pt x 752.8125pt>
 File: ruleta.jpg Graphic file (type jpg)
 <use ruleta.jpg>
-Package pdftex.def Info: ruleta.jpg  used on input line 193.
+Package pdftex.def Info: ruleta.jpg  used on input line 221.
 (pdftex.def)             Requested size: 199.1693pt x 132.77798pt.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/m/n' in size <14.4> not available
-(Font)              Font shape `T1/Alegreya-OsF/regular/n' tried instead on input line 193.
+(Font)              Font shape `T1/Alegreya-OsF/regular/n' tried instead on input line 221.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/regular/n' will be
-(Font)              scaled to size 14.4pt on input line 193.
+(Font)              scaled to size 14.4pt on input line 221.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/sb/n' in size <14.4> not available
-(Font)              Font shape `T1/Alegreya-OsF/medium/n' tried instead on input line 193.
+(Font)              Font shape `T1/Alegreya-OsF/medium/n' tried instead on input line 221.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/medium/n' will be
-(Font)              scaled to size 14.4pt on input line 193.
-LaTeX Font Info:    Font shape `T1/Alegreya-OsF/sb/n' in size <6> not available
-(Font)              Font shape `T1/Alegreya-OsF/medium/n' tried instead on input line 193.
-LaTeX Font Info:    Font shape `T1/Alegreya-OsF/medium/n' will be
-(Font)              scaled to size 6.0pt on input line 193.
+(Font)              scaled to size 14.4pt on input line 221.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/sb/n' in size <12> not available
-(Font)              Font shape `T1/Alegreya-OsF/medium/n' tried instead on input line 193.
+(Font)              Font shape `T1/Alegreya-OsF/medium/n' tried instead on input line 221.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/medium/n' will be
-(Font)              scaled to size 12.0pt on input line 193.
- [10
+(Font)              scaled to size 12.0pt on input line 221.
+ [12
 
- <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/ruleta.jpg>] [11
+] [13 <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/ruleta.jpg>] [14
 
-] [12
+] [15
 
-] [13
-
-] [14
+] [16
 
 ]
-<white.png, id=658, 3019.28pt x 1887.05pt>
+<white.png, id=844, 3019.28pt x 1887.05pt>
 File: white.png Graphic file (type png)
 <use white.png>
-Package pdftex.def Info: white.png  used on input line 238.
+Package pdftex.def Info: white.png  used on input line 256.
 (pdftex.def)             Requested size: 3019.27267pt x 1887.04541pt.
- [15
+ [17
 
  <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/white.png>]
 \tf@nav=\write7
@@ -1619,23 +1623,23 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
  ***********
 Package rerunfilecheck Info: File `algoritmos_trat.out' has not changed.
-(rerunfilecheck)             Checksum: 76D4C8B3BFE476657BB7B787B75EFE68;886.
+(rerunfilecheck)             Checksum: BC563DD7321B1458BAE8D7BFCD535202;1232.
 Package logreq Info: Writing requests to 'algoritmos_trat.run.xml'.
 \openout1 = `algoritmos_trat.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47107 strings out of 474369
- 972649 string characters out of 5740514
- 1943754 words of memory out of 5000000
- 68357 multiletter control sequences out of 15000+600000
- 974050 words of font info for 283 fonts, out of 8000000 for 9000
+ 47094 strings out of 474369
+ 971753 string characters out of 5740514
+ 1944754 words of memory out of 5000000
+ 68372 multiletter control sequences out of 15000+600000
+ 954012 words of font info for 260 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,1094b,2907s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Bold.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-BoldItalic.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Italic.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Medium.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Regular.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/AlegreyaSans-Black.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/AlegreyaSans-Medium.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/AlegreyaSans-Regular.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/euex10.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurm10.pfb>
-Output written on "c:\Users\c-lop\Documents\GitHub\Radioterapia_SS\Treatment _Planning _Algorithms\build\algoritmos_trat.pdf" (15 pages, 5069236 bytes).
+<C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Bold.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-BoldItalic.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Italic.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Medium.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Regular.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/AlegreyaSans-Black.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/AlegreyaSans-Medium.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/AlegreyaSans-Regular.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on "c:\Users\c-lop\Documents\GitHub\Radioterapia_SS\Treatment _Planning _Algorithms\build\algoritmos_trat.pdf" (17 pages, 5045385 bytes).
 PDF statistics:
- 735 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
- 90238 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 908 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
+ 80019 words of extra memory for PDF output out of 89155 (max. 10000000)
 

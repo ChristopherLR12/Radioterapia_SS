@@ -61,6 +61,8 @@
 
 \frame[plain,bg=fondo.jpg]{\titlepage}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \Section{Introduccion}
 
 \begin{frame}[standout]
@@ -142,6 +144,8 @@
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \Section{La representacion del paciente}
 
 \begin{frame}[standout]
@@ -170,66 +174,80 @@
 
     El \textbf{problema} con este enfoque fue que \textbf{tejidos} como el pulmón y el hueso \textbf{no son homogéneos en sí mismos y sus variaciones de densidad no se tendrían en cuenta al utilizar este enfoque}.
 
+    \vspace{0.35cm}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth]{p2.pdf}
+    \end{figure}
+
 \end{frame}
 
 \begin{frame}
 
-      \frametitle{Método Monte Carlo \tiny{\cite{IBM}}}
+    Todos los \textbf{sistemas de radioterapia modernos utilizan datos de imágenes volumétricas} para caracterizar al paciente en una \textbf{descripción 3D vóxel por vóxel}.
+    
+    El \textbf{conjunto de datos de imágenes más común utilizado} para la planificación es una \textbf{CT de planificación del tratamiento}, obtenida utilizando un \textbf{simulador de CT convencional}.
 
-      \vspace{0.5cm}
+    Este conjunto \textbf{constituye la representación más precisa del paciente aplicable para el cálculo de dosis}, debido a la \textbf{relación uno a uno entre el número de CT y la densidad física y/o electrónica}.
+
+    La \textbf{confiabilidad espacial de los escáneres de CT suele estar dentro del 2\%}, lo que genera \textbf{incertidumbres de dosis de aproximadamente el 1\%}.
+
+    \begin{itemize}
+        \item \textit{CBCT:} proporciona información sobre la alineación del paciente, pero la dispersión contenida en las imágenes dificulta la determinación precisa de la densidad.
+        \item  \textit{MRI:} puede proporcionar un contraste tisular superior, pero la información en no está fuertemente relacionada con la densidad electrónica. Y es más propensa a artefactos.
+    \end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section{fisica basica de la radiacion}
+
+\begin{frame}[standout]
+    \centering\LARGE
+    \textbf{\itshape\scshape Física básica de la radiación para el cálculo de dosis del haz de fotones}
+\end{frame}
+
+\begin{frame}
+
+      \frametitle{Producción de fotones de megavoltaje}
 
       \begin{wrapfigure}{r}{0.5\textwidth}
             \centering
             \includegraphics[width=0.5\textwidth]{ruleta.jpg}
       \end{wrapfigure}
 
-      Es una \textbf{técnica matemática} que se utiliza para estimar los \textbf{posibles resultados} de un evento incierto.
-      
-      Inventado por \textbf{John von Neumann} y \textbf{Stanislaw Ulam} para mejorar la toma de decisiones en condiciones inciertas.
-      
-      Lleva el nombre de una conocida \textbf{ciudad de casinos}.
-
-      Desde su introducción han evaluado el \textbf{impacto del riesgo} en muchos escenarios de la \textbf{vida real}.
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-      \textbf{II. La cavidad es grande comparada con el alcance de los electrones involucrados}
-
-      \begin{itemize}
-            \item Definido con el cociente del coeficiente de absorción de energía
-            \item Asumir que la cavidad no perturba la fluencia fotones, i.e. $(\Phi_k)_{med} = (\Phi_k)_{det}$
-      \end{itemize}
-
-      \be
-      f_{med,det}(Q) = \frac{\int_{0}^{k_{max}} [\Phi_k]_{med} [\mu_{en}(k)/\rho]_{med} \, dk}{\int_{0}^{k_{max}} [\Phi_k]_{med} [\mu_{en}(k)/\rho]_{det} \, dk} = [\mu_{en}/\rho]_{med,det}
-      \ee
-\end{frame}
-
-\Section{Calculo Monte Carlo de cantidades dosimetricas}
+\Section{algoritmo de superposicion/convolucion}
 
 \begin{frame}[standout]
-      \centering\LARGE
-      \textbf{\itshape\scshape Cálculo Monte Carlo de cantidades dosimétricas}
+    \centering\LARGE
+    \textbf{\itshape\scshape Algoritmo de superposición/convolución}
 \end{frame}
 
-\begin{frame}
-      \frametitle{Cocientes de poder de frenado para dosimetría de referencia}
+%%%%%%%%%%%%%%%%%%%%%%%
 
-      El problema básicamente se restringe al \textbf{cálculo de la fluencia de partícula cargadas relevantes o de fotones, diferencial en energía}, puntuando \textit{espectros de longitud de pista}.
-
-      Muchos de los avances de MC en este campo han estado relacionados con desarrollos en \textbf{algoritmos de transporte de electrones}, especialmente en presencia de límites de interfaz, donde los segmentos de longitud de pista pueden volverse tan cortos que las \textbf{múltiples teorías de dispersión ya no son válidas bajo la llamada técnica de historia condensada}.
-
-      Muchos de los sistemas MC actuales incluyen dicha técnica, en lugar del tipo de simulación de \textbf{interacción por interacción (dispersión única)} que suele utilizarse para la simulación del transporte de baja energía.
-\end{frame}
-
-\Section{Conclusiones}
+\Section{monte carlo}
 
 \begin{frame}[standout]
-      \centering\LARGE
-      \textbf{\itshape\scshape Conclusiones}
+    \centering\LARGE
+    \textbf{\itshape\scshape Monte Carlo}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section{metodo de ordenadas discretas}
+
+\begin{frame}[standout]
+    \centering\LARGE
+    \textbf{\itshape\scshape Método de ordenadas discretas}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \End
 \begin{frame}[standout,bg=white.png]

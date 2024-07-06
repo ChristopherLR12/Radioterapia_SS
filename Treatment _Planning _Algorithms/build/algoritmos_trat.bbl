@@ -62,40 +62,6 @@
       \field{title}{Khan's Treatment Planning in Radiation Oncology}
       \field{year}{2016}
     \endentry
-    \entry{IBM}{online}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=cbf44511d041dc6d1dd73cc0c033122c}{%
-           family={IBM},
-           familyi={I\bibinitperiod}}}%
-      }
-      \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{fullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorfullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{¿Qué es la simulación Monte Carlo?}
-      \field{urlday}{25}
-      \field{urlmonth}{5}
-      \field{urlyear}{2024}
-      \field{year}{2023}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.ibm.com/mx-es/topics/monte-carlo-simulation
-      \endverb
-      \verb{url}
-      \verb https://www.ibm.com/mx-es/topics/monte-carlo-simulation
-      \endverb
-    \endentry
   \enddatalist
   \datalist[entry]{none/global//global/global/global}
     \entry{Khans}{book}{}{}
@@ -140,40 +106,6 @@
       \field{edition}{4}
       \field{title}{Khan's Treatment Planning in Radiation Oncology}
       \field{year}{2016}
-    \endentry
-    \entry{IBM}{online}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=cbf44511d041dc6d1dd73cc0c033122c}{%
-           family={IBM},
-           familyi={I\bibinitperiod}}}%
-      }
-      \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{fullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorfullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{¿Qué es la simulación Monte Carlo?}
-      \field{urlday}{25}
-      \field{urlmonth}{5}
-      \field{urlyear}{2024}
-      \field{year}{2023}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.ibm.com/mx-es/topics/monte-carlo-simulation
-      \endverb
-      \verb{url}
-      \verb https://www.ibm.com/mx-es/topics/monte-carlo-simulation
-      \endverb
     \endentry
   \enddatalist
 \endrefsection
