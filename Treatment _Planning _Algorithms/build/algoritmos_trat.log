@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.24)  6 JUL 2024 00:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.24)  7 JUL 2024 00:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1451,14 +1451,14 @@ LaTeX Font Info:    Font shape `T1/Alegreya-OsF/m/n' in size <10> not available
 (Font)              Font shape `T1/Alegreya-OsF/regular/n' tried instead on input line 62.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/regular/n' will be
 (Font)              scaled to size 10.0pt on input line 62.
-<fondo.jpg, id=85, 2569.6pt x 1445.4pt>
-File: fondo.jpg Graphic file (type jpg)
-<use fondo.jpg>
-Package pdftex.def Info: fondo.jpg  used on input line 62.
-(pdftex.def)             Requested size: 2569.59377pt x 1445.39648pt.
+<fondo2.jpg, id=99, 1927.2pt x 1084.05pt>
+File: fondo2.jpg Graphic file (type jpg)
+<use fondo2.jpg>
+Package pdftex.def Info: fondo2.jpg  used on input line 62.
+(pdftex.def)             Requested size: 1927.19533pt x 1084.04736pt.
  [1
 
-{C:/Users/c-lop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/alegreya/algr_p7kywn.enc}{C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/alegreya/algr_u7nq5p.enc} <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/fondo.jpg>]
+{C:/Users/c-lop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/alegreya/algr_p7kywn.enc}{C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/alegreya/algr_u7nq5p.enc} <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/fondo2.jpg (PNG copy)>]
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/b/n' in size <17.28> not available
 (Font)              Font shape `T1/Alegreya-OsF/bold/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/bold/n' will be
@@ -1478,7 +1478,7 @@ LaTeX Font Info:    Font shape `T1/Alegreya-OsF/regular/n' will be
  [2{C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/alegreya/algr_dte76s.enc}
 
 {C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/alegreya/algr_hxyeky.enc}]
-<tarjeta.jpg, id=178, 1800.7275pt x 893.3375pt>
+<tarjeta.jpg, id=220, 1800.7275pt x 893.3375pt>
 File: tarjeta.jpg Graphic file (type jpg)
 <use tarjeta.jpg>
 Package pdftex.def Info: tarjeta.jpg  used on input line 90.
@@ -1530,7 +1530,7 @@ LaTeX Font Info:    Font shape `T1/Alegreya-OsF/regular/it' will be
  [3
 
  <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/tarjeta.jpg>]
-<tiposa.pdf, id=224, 410.05981pt x 101.08707pt>
+<tiposa.pdf, id=280, 410.05981pt x 101.08707pt>
 File: tiposa.pdf Graphic file (type pdf)
 <use tiposa.pdf>
 Package pdftex.def Info: tiposa.pdf  used on input line 108.
@@ -1538,7 +1538,7 @@ Package pdftex.def Info: tiposa.pdf  used on input line 108.
  [4
 
  <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/tiposa.pdf>]
-<ct.jpeg, id=309, 253.94875pt x 199.74625pt>
+<ct.jpeg, id=379, 253.94875pt x 199.74625pt>
 File: ct.jpeg Graphic file (type jpg)
 <use ct.jpeg>
 Package pdftex.def Info: ct.jpeg  used on input line 128.
@@ -1550,7 +1550,7 @@ Package pdftex.def Info: ct.jpeg  used on input line 128.
 ] [7
 
 ]
-<p1.pdf, id=443, 845.62384pt x 390.40796pt>
+<p1.pdf, id=555, 845.62384pt x 390.40796pt>
 File: p1.pdf Graphic file (type pdf)
 <use p1.pdf>
 Package pdftex.def Info: p1.pdf  used on input line 167.
@@ -1558,7 +1558,7 @@ Package pdftex.def Info: p1.pdf  used on input line 167.
  [8
 
  <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/p1.pdf>]
-<p2.pdf, id=496, 742.81923pt x 180.53703pt>
+<p2.pdf, id=622, 742.81923pt x 180.53703pt>
 File: p2.pdf Graphic file (type pdf)
 <use p2.pdf>
 Package pdftex.def Info: p2.pdf  used on input line 184.
@@ -1569,39 +1569,97 @@ Package pdftex.def Info: p2.pdf  used on input line 184.
 
 ] [11
 
+] [12
+
 ]
-<ruleta.jpg, id=659, 1129.21875pt x 752.8125pt>
-File: ruleta.jpg Graphic file (type jpg)
-<use ruleta.jpg>
-Package pdftex.def Info: ruleta.jpg  used on input line 221.
-(pdftex.def)             Requested size: 199.1693pt x 132.77798pt.
+<linac.pdf, id=885, 174.87321pt x 236.7497pt>
+File: linac.pdf Graphic file (type pdf)
+<use linac.pdf>
+Package pdftex.def Info: linac.pdf  used on input line 249.
+(pdftex.def)             Requested size: 143.40213pt x 194.15767pt.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/m/n' in size <14.4> not available
-(Font)              Font shape `T1/Alegreya-OsF/regular/n' tried instead on input line 221.
+(Font)              Font shape `T1/Alegreya-OsF/regular/n' tried instead on input line 249.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/regular/n' will be
-(Font)              scaled to size 14.4pt on input line 221.
+(Font)              scaled to size 14.4pt on input line 249.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/sb/n' in size <14.4> not available
-(Font)              Font shape `T1/Alegreya-OsF/medium/n' tried instead on input line 221.
+(Font)              Font shape `T1/Alegreya-OsF/medium/n' tried instead on input line 249.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/medium/n' will be
-(Font)              scaled to size 14.4pt on input line 221.
+(Font)              scaled to size 14.4pt on input line 249.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/sb/n' in size <12> not available
-(Font)              Font shape `T1/Alegreya-OsF/medium/n' tried instead on input line 221.
+(Font)              Font shape `T1/Alegreya-OsF/medium/n' tried instead on input line 249.
 LaTeX Font Info:    Font shape `T1/Alegreya-OsF/medium/n' will be
-(Font)              scaled to size 12.0pt on input line 221.
- [12
+(Font)              scaled to size 12.0pt on input line 249.
+ [13
 
-] [13 <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/ruleta.jpg>] [14
-
-] [15
-
-] [16
+ <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/linac.pdf>]
+File: linac.pdf Graphic file (type pdf)
+<use linac.pdf>
+Package pdftex.def Info: linac.pdf  used on input line 272.
+(pdftex.def)             Requested size: 143.40213pt x 194.15767pt.
+ [14
 
 ]
-<white.png, id=844, 3019.28pt x 1887.05pt>
+<efectos.pdf, id=1012, 1111.09341pt x 394.42351pt>
+File: efectos.pdf Graphic file (type pdf)
+<use efectos.pdf>
+Package pdftex.def Info: efectos.pdf  used on input line 287.
+(pdftex.def)             Requested size: 358.50229pt x 127.2653pt.
+ [15
+
+ <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/efectos.pdf>]
+<comp.pdf, id=1079, 281.64766pt x 99.76656pt>
+File: comp.pdf Graphic file (type pdf)
+<use comp.pdf>
+Package pdftex.def Info: comp.pdf  used on input line 306.
+(pdftex.def)             Requested size: 119.50279pt x 42.33095pt.
+ [16
+
+ <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/comp.pdf>]
+<pc.pdf, id=1140, 1099.66951pt x 284.23662pt>
+File: pc.pdf Graphic file (type pdf)
+<use pc.pdf>
+Package pdftex.def Info: pc.pdf  used on input line 323.
+(pdftex.def)             Requested size: 338.59023pt x 87.51392pt.
+ [17
+
+ <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/pc.pdf>]
+<pdd.pdf, id=1207, 305.06375pt x 183.79024pt>
+File: pdd.pdf Graphic file (type pdf)
+<use pdd.pdf>
+Package pdftex.def Info: pdd.pdf  used on input line 342.
+(pdftex.def)             Requested size: 111.53432pt x 67.19365pt.
+
+Underfull \hbox (badness 3291) in paragraph at lines 342--342
+[]\T1/Alegreya-OsF/regular/n/10.95 (+20) La \T1/Alegreya-OsF/bold/n/10.95 (+20) do-sis au-men-ta has-ta un má-xi-mo a una pro-fun-di-dad\T1/Alegreya-OsF/regular/n/10.95 (+20) ,
+ []
+
+[18
+
+ <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/pdd.pdf>]
+<ee.pdf, id=1280, 344.84554pt x 471.81252pt>
+File: ee.pdf Graphic file (type pdf)
+<use ee.pdf>
+Package pdftex.def Info: ee.pdf  used on input line 361.
+(pdftex.def)             Requested size: 111.53432pt x 152.59572pt.
+LaTeX Font Info:    Font shape `T1/Alegreya-OsF/b/it' in size <10.95> not available
+(Font)              Font shape `T1/Alegreya-OsF/bold/it' tried instead on input line 361.
+LaTeX Font Info:    Font shape `T1/Alegreya-OsF/bold/it' will be
+(Font)              scaled to size 10.95pt on input line 361.
+ [19
+
+ <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/ee.pdf>] [20
+
+] [21
+
+] [22
+
+]
+<white.png, id=1491, 3019.28pt x 1887.05pt>
 File: white.png Graphic file (type png)
 <use white.png>
-Package pdftex.def Info: white.png  used on input line 256.
+Package pdftex.def Info: white.png  used on input line 397.
 (pdftex.def)             Requested size: 3019.27267pt x 1887.04541pt.
- [17
+ [23
 
  <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/build/white.png>]
 \tf@nav=\write7
@@ -1629,17 +1687,17 @@ Package logreq Info: Writing requests to 'algoritmos_trat.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47094 strings out of 474369
- 971753 string characters out of 5740514
- 1944754 words of memory out of 5000000
- 68372 multiletter control sequences out of 15000+600000
- 954012 words of font info for 260 fonts, out of 8000000 for 9000
+ 47221 strings out of 474369
+ 974379 string characters out of 5740514
+ 1948754 words of memory out of 5000000
+ 68430 multiletter control sequences out of 15000+600000
+ 976495 words of font info for 298 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,1094b,2907s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Bold.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-BoldItalic.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Italic.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Medium.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/Alegreya-Regular.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/AlegreyaSans-Black.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/AlegreyaSans-Medium.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/huerta/alegreya/AlegreyaSans-Regular.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on "c:\Users\c-lop\Documents\GitHub\Radioterapia_SS\Treatment _Planning _Algorithms\build\algoritmos_trat.pdf" (17 pages, 5045385 bytes).
+Output written on "c:\Users\c-lop\Documents\GitHub\Radioterapia_SS\Treatment _Planning _Algorithms\build\algoritmos_trat.pdf" (23 pages, 5398107 bytes).
 PDF statistics:
- 908 PDF objects out of 1000 (max. 8388607)
- 44 named destinations out of 1000 (max. 500000)
- 80019 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 1559 PDF objects out of 1728 (max. 8388607)
+ 56 named destinations out of 1000 (max. 500000)
+ 86188 words of extra memory for PDF output out of 89155 (max. 10000000)
 

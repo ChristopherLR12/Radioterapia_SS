@@ -59,7 +59,7 @@
 
 \begin{document}
 
-\frame[plain,bg=fondo.jpg]{\titlepage}
+\frame[plain,bg=fondo2.jpg]{\titlepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -200,6 +200,20 @@
 
 \end{frame}
 
+\begin{frame}
+
+    Además de la densidad electrónica, también \textbf{es necesario determinar la composición del tejido para algoritmos de cálculo más modernos}.
+
+    En los algoritmos de \textbf{convolución/superposición}, las \textbf{tablas de atenuación de fluencia} normalmente se \textbf{calculan utilizando datos de coeficientes de atenuación de masa}, que dependen algo débilmente del material. 
+    
+    A menudo, estos \textbf{coeficientes se determinan para cada vóxel interpolando linealmente entre los resultados publicados de dos materiales diferentes} (por ejemplo, agua y hueso) en función de la \textbf{densidad asignada al vóxel}.
+    
+    Tanto para los cálculos de transporte de \textbf{MC} como de \textbf{Boltzmann}, se debe realizar una \textbf{asignación de material completa} para permitir una \textbf{determinación precisa de la sección transversal para el transporte de fotones y electrones} en todo el volumen del paciente.
+
+    Idealmente, el \textbf{tamaño de los vóxeles en la CT de planificación del tratamiento} debería estar \textbf{cerca de la resolución de la cuadrícula de dosis utilizada para el cálculo}.
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \Section{fisica basica de la radiacion}
@@ -211,14 +225,141 @@
 
 \begin{frame}
 
-      \frametitle{Producción de fotones de megavoltaje}
+    \frametitle{Producción de fotones de megavoltaje}
 
-      \begin{wrapfigure}{r}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.5\textwidth]{ruleta.jpg}
-      \end{wrapfigure}
+    \vspace{-0.7cm}
+
+    \begin{wrapfigure}{l}{0.36\textwidth}
+        \centering
+        \includegraphics[width=0.36\textwidth]{linac.pdf}
+    \end{wrapfigure}
+
+    $\quad$
+
+    \vspace{-0.1cm}
+
+    \textbf{Acelerador lineal}, que consta de un \textbf{material de protección de alta densidad}, como plomo. 
+
+    \textbf{Electrones de alta energía se aceleran} en la estructura aceleradora del linac e \textbf{inciden en el objetivo de rayos X} producción \textbf{radiación de frenado} (Bremsstrahlung).
+    
+    El tamaño del \textbf{punto focal de los electrones en el objetivo es pequeño}, típicamente del orden de unos pocos milímetros. Este tamaño finito \textbf{contribuye a la penumbra, o al desenfoque del haz cerca de los bordes del campo}.
+
+    El \textbf{colimador primario} (aleación de tungsteno) \textbf{define el tamaño máximo del campo} que se puede utilizar para el tratamiento.
 
 \end{frame}
+
+\begin{frame}
+
+    \vspace{-0.3cm}
+
+    \begin{wrapfigure}{l}{0.36\textwidth}
+        \centering
+        \includegraphics[width=0.36\textwidth]{linac.pdf}
+    \end{wrapfigure}
+
+    $\quad$
+
+    \vspace{-0.3cm}
+
+    En el caso de \textbf{energías de megavoltaje}, la \textbf{radiación de frenado se produce principalmente en dirección directa}.
+
+    En la \textbf{mayoría de los aceleradores de arco en C convencionales}, para hacer que la \textbf{intensidad del haz sea más uniforme}, se coloca un \textbf{filtro cónico} en el haz.
+
+    La \textbf{presencia del filtro de aplanado altera el espectro energético}, ya que el haz que atraviesa la parte central más gruesa del filtro tiene una mayor proporción de fotones de baja energía absorbidos.
+
+    Es posible que esto \textbf{no sea necesario para la administración de tratamientos modernos} donde se utiliza \textbf{modulación para variar la intensidad del haz}, muchas unidades tienen la opción de quitar el filtro (\textbf{TrueBeam}).
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Dispersión Compton}
+
+    Los \textbf{fotones pueden dispersarse} inelásticamente mediante \textbf{tres procesos principales}:
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{efectos.pdf}
+    \end{figure}
+
+    En el \textbf{rango de energía utilizado para la radioterapia}, la \textbf{mayoría de las interacciones} son eventos de \textbf{dispersión Compton}.
+
+\end{frame}
+
+\begin{frame}
+
+    Los \textbf{fotones dispersos Compton} pueden \textbf{originarse en el cabezal de tratamiento del acelerador} o en el \textbf{paciente (o phantom)}.
+
+    La mayor parte de la dosis de dispersión generada por el \textbf{cabezal del acelerador se produce dentro del colimador primario y el filtro de aplanamiento de campo}. Estos fotones y electrones dispersos a veces se le denomina \textbf{``radiación extrafocal"}.
+
+    \begin{wrapfigure}{r}{0.3\textwidth}
+        \centering
+        \includegraphics[width=0.3\textwidth]{comp.pdf}
+    \end{wrapfigure}
+
+    Para la dispersión generada por el \textbf{phantom}, las \textbf{características de penetración del haz también se modifican}. \textbf{A medida que aumenta el tamaño del campo, la dispersión del phantom hace que el haz sea significativamente más penetrante con la profundidad}.
+
+    Este efecto es lo \textbf{suficientemente significativo} como para que esta \textbf{diferencia de energía deba incluirse en los cálculos de dosis}. 
+    
+    El comportamiento de la \textbf{dispersión de los modificadores del haz, como las cuñas, también debe considerarse dentro del modelo de fotones}.
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Transporte de electrones}
+
+    \textbf{Los fotones son radiación indirectamente ionizante}. La \textbf{dosis es depositada por partículas cargadas} puestas en movimiento desde el lugar de interacción del fotón.
+
+    En \textbf{energías de megavoltaje}, el \textbf{alcance de las partículas cargadas puede ser de varios centímetros}. Estas partículas se mueven principalmente \textbf{hacia adelante}, pero se \textbf{dispersan considerablemente} a medida que \textbf{disminuyen su velocidad} y se \textbf{detienen}.
+
+    \textbf{Los electrones pierden energía por dos procesos}:
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.85\textwidth]{pc.pdf}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+    La \textbf{naturaleza indirecta de la deposición de dosis de fotones} da como resultado varias \textbf{características en las distribuciones de dosis}.
+
+    \begin{wrapfigure}{l}{0.28\textwidth}
+        \centering
+        \includegraphics[width=0.28\textwidth]{pdd.pdf}
+    \end{wrapfigure}
+
+    La \textbf{dosis superficial aumenta (se “acumula”) desde la superficie del paciente debido al mayor número de PC (partículas cargadas) que se ponen en movimiento}. Esto da como resultado una \textbf{dosis cutánea baja}, cuya magnitud es inversamente proporcional a la longitud del camino de las PC.
+
+    La \textbf{dosis aumenta hasta un máximo a una profundidad}, $D_{max}$,característica de la energía del haz de fotones. 
+
+    En un punto del paciente con una \textbf{profundidad igual a la distancia de penetración de las PC}, las \textbf{PC que se detienen se reponen con PC que se ponen en movimiento} y se dice que se alcanza el \textbf{equilibrio de partículas cargadas (CPE)}.
+
+    En este caso, la \textbf{dosis en un punto es proporcional a la fluencia de energía de los fotones en el mismo punto}. 
+
+\end{frame}
+
+\begin{frame}
+
+    \vspace{0.3cm}
+
+    \begin{wrapfigure}{r}{0.28\textwidth}
+        \centering
+        \includegraphics[width=0.28\textwidth]{ee.pdf}
+    \end{wrapfigure}
+
+    El \textbf{criterio principal para CPE es que la fluencia de energía de los fotones debe ser constante en el rango de electrones puestos en movimiento en todas las direcciones}. En general, esto \textbf{no ocurre en medios heterogéneos}, cerca del límite del haz o en haces de intensidad modulada. 
+
+    Los \textbf{electrones producidos en la cabeza del acelerador y en el aire entre el acelerador y el paciente se denominan \textit{electrones de contaminación}}.
+    
+    La \textbf{interacción de estos electrones} dentro y justo más allá de la región de acumulación \textbf{contribuye significativamente a la dosis, especialmente si el campo es grande}.
+    
+    La \textbf{perturbación en el transporte de electrones puede exagerarse cerca de las heterogeneidades}.
+
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
