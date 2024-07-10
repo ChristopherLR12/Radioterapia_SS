@@ -216,7 +216,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\Section{fisica basica de la radiacion}
+\Section{Fisica basica de la radiacion}
 
 \begin{frame}[standout]
     \centering\LARGE
@@ -363,25 +363,506 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\Section{algoritmo de superposicion/convolucion}
+\Section{Algoritmo de superposicion/convolucion}
 
 \begin{frame}[standout]
     \centering\LARGE
     \textbf{\itshape\scshape Algoritmo de superposición/convolución}
 \end{frame}
 
+\begin{frame}
+
+    Es el \textbf{cálculo de dosis de fotones más común} que se utiliza hoy en día para la planificación de radioterapia.
+
+    Este método \textbf{incorpora un enfoque basado en modelos} para describir la física subyacente de las interacciones, sin dejar de poder \textbf{calcular la dosis en un tiempo razonable}.
+
+    Este \textbf{comienza modelando la naturaleza indirecta de la deposición de dosis a partir de haces de fotones}.
+    
+    Las \textbf{interacciones de los fotones primarios se tratan por separado del transporte de fotones dispersos y electrones puestos en movimiento}.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.48\textwidth]{CS.pdf}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Cálculo de dosis en condiciones de equilibrio de partícula cargada}
+
+    Consideramos \textbf{el caso especial de la determinación de dosis en condiciones de CPE}. 
+
+    En este caso, \textbf{la energía total absorbida por las partículas cargadas} en la posición $r$ \textbf{es la misma que la energía total que escapa} debido a las interacciones de los fotones en el mismo lugar.
+
+    Por tanto, \textbf{la dosis primaria $D_P$ y la primera dosis dispersada de un haz paralelo de fotones monoenergéticos se pueden calcular como}:
+
+    \bae \label{Dp}
+    \begin{split}
+    D_P(\mathbf{r}) = \pl K_c(\mathbf{r}) \pr_P = \pl \frac{\mu_{en}}{\rho} \pr_P \psi_{P} (\mathbf{r}) \\
+    \quad \quad \quad \, \, \, = \pl \frac{\mu_{en}}{\rho} \pr_P \phi_{P} (\mathbf{r}=0) \, h\nu_P \, e^{-\mu r}
+    \end{split}
+    \eae
+    
+\end{frame}
+
+\begin{frame}
+
+    \vspace{-0.2cm}
+
+    \be
+    D_P(\mathbf{r}) = \pl K_c(\mathbf{r}) \pr_P = \pl \frac{\mu_{en}}{\rho} \pr_P \psi_{P} (\mathbf{r})
+    \ee
+    \be
+    \quad \quad \quad \, \, \, = \pl \frac{\mu_{en}}{\rho} \pr_P \phi_{P} (\mathbf{r}=0) \, h\nu_P \, e^{-\mu r} 
+    \ee
+
+    Donde:
+
+    \vspace{-0.6cm}
+
+    \be
+    \pl K_c(\mathbf{r}) \pr_P = \text{kerma de colisión},
+    \ee
+    \be
+    \pl \frac{\mu_{en}}{\rho} \pr = \text{coeficiente másico de absorción de energía}, 
+    \ee
+    \be
+    \psi_{P} (\mathbf{r}) = \text{fluencia de energía primaria},
+    \ee
+    \be
+    \phi_{P} (\mathbf{r}=0) = \text{fluencia de fotones primarios en la superficie del phantom},
+    \ee
+    \be
+    h\nu_P = \text{energía del fotón primario}, 
+    \ee
+    \be
+    \mu = \text{coeficiente de atenuación de fotones primarios}
+    \ee
+
+\end{frame}
+
+\begin{frame}
+
+    La \textbf{dosis total es la suma de los componentes primario y disperso}.
+
+    \bae
+    D_{tot}(\mathbf{r}) = D_P(\mathbf{r}) + \int D_P(\mathbf{r'}) \frac{\pl \mu_{en} \pr_{scat} \pl h\nu \pr_{scat}}{\pl \mu_{en} \pr_{P} \pl h\nu \pr_{P}} \derivative{P_{scat} (\theta,\mathbf{r'})}{V} e^{-\mu_{scat}(r'-r)} \text{d}V
+    \eae
+    
+    Donde $\derivative{P_{scat} (\theta,\mathbf{r'})}{V}$ es la probabilidad por unidad de volumen de que un fotón primario se disperse en un ángulo sólido centrado alrededor del ángulo $\theta$.
+
+    Estas \textbf{no tienen en cuenta ninguna dispersión de fotones secundarios o de orden superior}.
+
+    También \textbf{ignoran la divergencia del haz} y \textbf{no tienen en cuenta las heterogeneidades de los tejidos}. Son \textbf{válidos sólo para situaciones de CPE}, de modo que el \textbf{cálculo de la dosis no es válido en la región de acumulación o cerca de los límites del campo}, y la \textbf{dosis dispersa se ve perturbada por las heterogeneidades que se encuentran entre el sitio de dispersión en $r'$ y el punto $r$, donde la dosis total se está calculando}.
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Método de convolución/superposición}
+
+    Desafortunadamente, \textbf{la ecuación} \eqref{Dp} \textbf{es simplista} porque \textbf{no tiene en cuenta el alcance finito de partículas cargadas}, $\rightarrow$ \textbf{la fluencia de energía que estaba presente en el punto en que las partículas cargadas se pusieron en movimiento debería reemplazar la fluencia de energía en la ecuación} \eqref{Dp}.
+
+    En realidad, \textbf{las partículas pueden originarse en cualquier ubicación alrededor del punto de cálculo, siempre que esté dentro del alcance de partículas}.
+
+    Por lo tanto, en lugar de un \textbf{único sitio de interacción de fotones efectivo}, esta expresión para la dosis \textbf{se convierte en una integral de convolución alrededor de $r$}:
+
+    \bae \label{DPc}
+    D(\mathbf{r}) = \int K_c(\mathbf{r'}) A_c (\mathbf{r}-\mathbf{r'}) \text{d}\mathbf{r'}
+    \eae
+    
+\end{frame}
+
+\begin{frame}
+    
+    \vspace{0.5cm}
+
+    \be
+    D(\mathbf{r}) = \int K_c(\mathbf{r'}) A_c (\mathbf{r}-\mathbf{r'}) \text{d}\mathbf{r'}
+    \ee
+
+    Donde $A_c (\mathbf{r}-\mathbf{r'})$ describe la \textbf{contribución de la energía de las partículas cargadas} que se absorbe por unidad de volumen en $\mathbf{r}$ a partir de interacciones en $\mathbf{r'}$ y la integración es sobre todos los valores de $\mathbf{r'}$ que componen el volumen d$\mathbf{r'}$.
+
+    La \textbf{ecuación \eqref{DPc} requiere conocimiento de la fluencia de energía debida a los fotones primarios y dispersos en todos los puntos}.Para esto \textbf{se necesitarían métodos de transporte que consumirían mucho tiempo} para calcular con precisión el componente disperso.
+
+    Una \textbf{solución más sencilla} es utilizar un \textbf{núcleo de dispersión que incluya el componente de fotones dispersos junto con la contribución de las partículas cargadas}. 
+    
+\end{frame}
+
+\begin{frame}
+
+    \vspace{0.5cm}
+    
+    El \textbf{núcleo ya no es finito} porque se incluye la dispersión de fotones (que no tiene alcance). Ahora \textbf{sólo se transportan explícitamente fotones primarios}. 
+    
+    Una \textbf{ecuación de convolución que separa el transporte de fotones primarios} y un \textbf{núcleo que explica los fotones y electrones dispersos puestos en movimiento lejos del sitio de interacción del fotón primario es la siguiente}:
+    
+    \bae
+    D(\mathbf{r}) = \int \frac{\mu}{\rho} \psi_P(\mathbf{r'}) A_c (\mathbf{r}-\mathbf{r'}) \text{d}\mathbf{r'} = \int T_P(\mathbf{r'}) A_c (\mathbf{r}-\mathbf{r'}) \text{d}\mathbf{r'}
+    \eae
+
+    El producto del \textbf{coeficiente másico de atenuación} y la \textbf{fluencia de energía primaria} es la \textbf{terma primaria} (\textit{total energy released per unit mass}) $T_P(\mathbf{r'})$.
+    
+\end{frame}
+
+\begin{frame}
+
+    En principio, los \textbf{núcleos de convolución pueden obtenerse mediante cálculo analítico}, \textbf{deconvolución a partir de distribuciones de dosis} o incluso mediante \textbf{medición directa}. 
+    
+    Muy a menudo, los núcleos se \textbf{calculan con el método MC} haciendo \textbf{interactuar una gran cantidad de fotones primarios en un lugar} y determinando de \textbf{dónde se absorbe la energía}, es decir, de las \textbf{partículas cargadas generadas primariamente}, las \textbf{partículas cargadas que posteriormente se ponen en movimiento a partir de fotones dispersos o ambos}.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.4\textwidth]{ruleta.jpg}
+    \end{figure}
+    
+\end{frame}
+
+\begin{frame}
+
+    \begin{wrapfigure}{l}{0.28\textwidth}
+        \centering
+        \includegraphics[width=0.28\textwidth]{f1.jpg}
+    \end{wrapfigure}
+
+    \textbf{Núcleos de cobalto-60} (fotones primarios de 1.25 MeV) para agua calculados mediante simulación de Monte Carlo. Las líneas de isovalor están en unidades de $cGy$ $MeV^{-1}$ fotón$^{-1}$. 
+    
+    \textbf{A:} La contribución debida a los electrones puestos en movimiento a partir de fotones primarios (es decir, la contribución primaria). 
+    
+    \textbf{B:} La primera contribución de dispersión. 
+    
+    \textbf{C:} La suma de las contribuciones primarias y todas las de dispersión.
+
+    El \textbf{núcleo está dirigido hacia adelante} incluso con esta energía baja. A medida que \textbf{aumenta la energía, el núcleo se vuelve aún más puntiagudo}.
+    
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Modelado de fotones primarios incidentes en el phantom}
+
+    La \textbf{ecuación de convolución se limita a describir haces paralelos monoenergéticos de fotones primarios que interactúan con phantoms homogéneos}.
+
+    En la actualidad, la \textbf{información espectral se deriva de simulaciones de MC comparadas mediante medición}. 
+    
+    Utilizando el método \textbf{MC EGS4}, Mohan y Chui \textbf{cuantificaron por primera vez el espectro de aceleradores clínicos utilizando el método MC}. Desde entonces, varios \textbf{otros autores han realizado simulaciones para calcular el espectro de energía de los fotones}.
+
+    \textbf{Se esperaría que el espectro también variara con la posición fuera del eje si se utiliza un filtro de aplanado de campo}.
+
+\end{frame}
+
+\begin{frame}
+
+    Tenemos la \textbf{distribución media de energía de fotones} en un campo abierto de $40 \times 40 \, cm$  desde un \textbf{objetivo de haz de fotones} de 10 $MV$, un \textbf{colimador primario} y un \textbf{filtro de aplanado de campo}. Equipo  Varian 2100C. Los valores corresponden a fotones en el aire que llegan al plano del isocentro.
+
+    \begin{wrapfigure}{l}{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.48\textwidth]{f2.jpg}
+    \end{wrapfigure}
+
+    La figura muestra que \textbf{la energía media de la radiación primaria} (directamente desde el objetivo) \textbf{disminuye fuera del eje, pero los fotones extrafocales} (colimador primario y filtro de aplanado) \textbf{no lo hacen}. 
+
+    Esta disminución fuera del eje \textbf{se debe al endurecimiento diferencial del haz por el filtro de aplanado}. Dado que \textbf{domina el componente fotónico directo}, el \textbf{modelo debe tener en cuenta el cambio en el espectro de energía a lo largo del campo}.
+    
+\end{frame}
+
+\begin{frame}
+
+    Los \textbf{colimadores y los contornos del campo de bloques} generalmente se \textbf{modelan con una función de máscara matemática}, que consiste en la \textbf{fracción de la fluencia incidente transmitida a través del modificador}. 
+
+    Para un \textbf{colimador}, la función de máscara dentro del campo es la \textbf{unidad}, y \textbf{debajo del colimador es igual a la transmisión del colimador primario}. 
+    
+    Para un \textbf{bloque}, la función de máscara dentro del campo es la \textbf{transmisión primaria a través de la bandeja del bloque}, y \textbf{debajo del bloque es igual a la transmisión del bloque primario}.
+
+    \be
+    A \rightarrow A \times B \rightarrow A \times B \times C
+    \ee
+
+    La \textbf{función de máscara por sí sola no sería capaz de modelar el desenfoque penumbral del límite del campo}. Esto ha sido modelado mediante una \textbf{función de apertura}. 
+
+\end{frame}
+
+\begin{frame}
+
+    Las \textbf{cuñas y compensadores convencionales no se pueden modelar con precisión únicamente con atenuación primaria}.
+
+    Estos componentes producen \textbf{dispersión y provocan un endurecimiento diferencial del haz}, este último se puede \textbf{contabilizar según el material de la cuña y el espectro del haz en función de la posición radial}. 
+
+    La \textbf{dispersión de la cuña es más difícil de explicar}. La \textbf{mayor dispersión hace que el factor de cuña aumente en un pequeño porcentaje en función del tamaño del campo}. Esto puede \textbf{modelarse adecuadamente mediante un factor dependiente del tamaño del campo que duplique el efecto}.
+    
+    Alternativamente, \textbf{se puede incluir la cuña o el compensador como parte de la representación del paciente}. Este \textbf{phantom extendido} tiene una \textbf{gran heterogeneidad}, es decir, \textbf{el espacio de aire entre el dispositivo y el paciente}. Este método puede predecir la variación del factor de cuña en función del tamaño del campo.
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Seguimiento de rayos de la fluencia de la energía incidente a través del phantom}
+
+    \begin{wrapfigure}{l}{0.26\textwidth}
+        \centering
+        \includegraphics[width=0.26\textwidth]{f3.jpg}
+    \end{wrapfigure}
+
+    La \textbf{distribución de fluencia de energía 2D incidente se traza con rayos a través del paciente para crear una distribución de fluencia de energía 3D}.
+
+    La \textbf{densidad de los rayos seguidos y el muestreo de los rayos} a lo largo de su trayectoria \textbf{deben ser suficientes para representar el comportamiento de atenuación del phantom}. 
+    
+    Una \textbf{densidad de muestreo suficiente es especialmente importante para los campos tangenciales de cabeza, cuello y mama}. 
+    
+    En general, la \textbf{densidad de muestreo requerida es mayor que la resolución de dosis deseada}, por lo que \textbf{varios rayos atraviesan cada vóxel de cálculo}.
+
+\end{frame}
+
+\begin{frame}
+
+    Ya con lo anterior ...
+
+    \textbf{Terma se calcula dentro de la matriz de cálculo multiplicando la fluencia primaria por el coeficiente de atenuación de masa}. 
+    
+    El \textbf{coeficiente de atenuación del rayo primario}, ponderado según el espectro del haz apropiado, \textbf{se basa en las propiedades del vóxel}. 
+    
+    La \textbf{fluencia de energía en un punto de muestra se reduce con respecto a la muestra anterior a lo largo del rayo}. 
+    
+    El \textbf{endurecimiento del espectro de fluencia de energía primaria con profundidad y posición fuera del eje se explica cambiando el coeficiente de atenuación con la posición}. 
+    
+    La \textbf{velocidad de la operación de trazado de rayos se puede mejorar significativamente mediante el uso de tablas de búsqueda para almacenar los resultados calculados previamente}.
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Contaminación electrónica}
+
+    \textbf{No se tiene en cuenta en el método de convolución convencional}, por lo que se debe \textbf{agregar un componente independiente adicional} para tener en cuenta esta dosis.
+
+    \textbf{La dosis superficial de los haces de fotones de megavoltaje se debe casi en su totalidad al componente de contaminación electrónica}. 
+
+    Estudios en los que la \textbf{contaminación electrónica se ha eliminado} mediante barrido magnético de electrones del campo revelan que \textbf{la dosis de los electrones contaminantes se asemeja a un haz de electrones con un alcance práctico algo mayor que la profundidad de la dosis máxima}.
+
+    Se puede obtener una \textbf{concordancia razonable con las curvas PDD medidas escalando la curva de PDD de electrones de contaminación con la dosis de superficie} y \textbf{agregando este componente a la distribución de dosis calculada por convolución}.
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Varianza espacial del núcleo y heterogeneidades del phantom}
+
+    \be
+    D(\mathbf{r}) \int T_P(\mathbf{r'}) A_c (\mathbf{r}-\mathbf{r'}) \text{d}\mathbf{r'}
+    \ee
+
+    La \textbf{ecuación de convolución supone que el núcleo es espacialmente invariante} en el sentido de que \textbf{el valor del núcleo depende sólo de la relación geométrica relativa entre los sitios de interacción y deposición de dosis} y \textbf{no de su posición absoluta en el phantom}.
+
+    Cuando esto es \textbf{cierto, el cálculo de la convolución se puede realizar en el espacio de Fourier}, ahorrando mucho tiempo. Desafortunadamente, \textbf{este no es el caso ya que el núcleo varía según la posición}.
+
+    Los \textbf{efectos del endurecimiento y la divergencia del haz son pequeños} y pueden \textbf{calcularse de varias formas}. 
+
+\end{frame}
+
+\begin{frame}
+
+    Se puede utilizar una \textbf{corrección multiplicativa de la terma} en el paciente para corregir el endurecimiento del núcleo.
+
+    Alternativamente, se pueden \textbf{utilizar varios núcleos válidos para diferentes profundidades} en el phantom como base para la \textbf{interpolación a una profundidad específica}. 
+
+    Se ha demostrado que la \textbf{corrección en función de la profundidad es casi lineal}, y \textbf{no emplear ninguna corrección da como resultado una discrepancia de $\sim4\%$ a 30 $cm$ de profundidad}.
+
+    \textbf{Las heterogeneidades fantasma son un problema más grave.}
+
+    \textbf{Modelar el transporte de electrones y fotones dispersos a través de un fantasma heterogéneo requeriría un núcleo único en cada ubicación}. Cada núcleo se \textbf{superpondría} en la cuadrícula de dosis y se \textbf{ponderaría} con respecto al terma primario.
+
+\end{frame}
+
+\begin{frame}
+
+    Lo que se requiere para que el cálculo sea manejable es \textbf{modificar un núcleo, calculado en un medio homogéneo, para que sea razonablemente representativo en una situación heterogénea}.
+
+    Si la \textbf{mayor parte de la energía entre el sitio de interacción principal y el sitio de deposición de dosis se transporta en el camino directo entre estos sitios}, es posible tener una \textbf{corrección} relativamente simple \textbf{de la ecuación de convolución basada en el trazado de rayos entre los sitios de interacción y deposición de dosis}, y \textbf{escalar la longitud del camino por densidad} para obtener la \textbf{longitud del camino radiológico entre estos sitios}.
+
+    La \textbf{ecuación de convolución modificada para la longitud del camino radiológico se llama ecuación de superposición}:
+
+    \bae
+    D(\mathbf{r}) \int T_P(\rho_{r'}\cdot \mathbf{r'}) A_c (\rho_{r'-r}\cdot (\mathbf{r}-\mathbf{r'})) \text{d}\mathbf{r'}
+    \eae
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{wrapfigure}{r}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.35\textwidth]{dr.pdf}
+    \end{wrapfigure}
+
+    \be
+    D(\mathbf{r}) \int T_P(\rho_{r'}\cdot \mathbf{r'}) A_c (\rho_{r'-r}\cdot (\mathbf{r}-\mathbf{r'})) \text{d}\mathbf{r'}
+    \ee
+
+    Donde:
+    
+    $\rho_{r'-r}\cdot (\mathbf{r}-\mathbf{r'})$ es la distancia radiológica desde el sitio de deposición de la dosis hasta el sitio de interacción del fotón primario.
+    
+    $\rho_{r'}\cdot \mathbf{r'}$ es la distancia radiológica desde la fuente hasta el sitio de interacción del fotón.
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{wrapfigure}{l}{0.29\textwidth}
+        \centering
+        \includegraphics[width=0.29\textwidth]{f4.jpg}
+    \end{wrapfigure}
+
+    Woo y Cunningham \textbf{compararon el núcleo modificado de fotones primarios de 6 $MeV$ generado por MC en un phantom de agua que contiene un anillo de aire}. 
+    
+    La \textbf{línea discontinua es un núcleo modificado para la situación heterogénea} utilizando una escala de rango a partir de uno \textbf{derivado en un phantom homogéneo}. La \textbf{línea continua es un núcleo calculado explícitamente para la situación heterogénea}.
+
+    Los resultados mostrados indican que la \textbf{concordancia no es perfecta}, pero las tendencias computacionales son claramente evidentes en el sentido de que las \textbf{líneas de isovalor se contraen en regiones de alta densidad y se expanden en regiones de baja densidad}.
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%
 
-\Section{monte carlo}
+\Section{Monte Carlo}
 
 \begin{frame}[standout]
     \centering\LARGE
     \textbf{\itshape\scshape Monte Carlo}
 \end{frame}
 
+\begin{frame}
+
+    La \textbf{técnica de transporte de radiación de Monte Carlo (MC)} consiste en \textbf{utilizar distribuciones de probabilidad bien establecidas} que rigen las interacciones individuales de electrones y fotones para \textbf{simular su transporte a través de la materia}.
+
+    Aunque el método MC se había \textbf{propuesto desde hacía algún tiempo, no pudo utilizarse plenamente hasta el desarrollo de la computadora digital en la década de 1940}.
+
+    El \textbf{transporte de radiación} fue uno de los \textbf{primeros usos de esta metodología} en ese momento, y los códigos públicos, como el \textbf{código de transporte de N partículas de Monte Carlo (MCNP)}, comenzaron a aparecer ya en la década de 1950.
+
+    En los cálculos del transporte de fotones, el \textbf{código de transporte de electrones (ETRAN)}, desarrollado por la Oficina Nacional de Estándares en la década de 1970, \textbf{se basó en la técnica de historial condensado} introducida por primera vez por Berger en 1963.
+
+    El código \textbf{Electron Gamma Shower (EGS4)} se desarrolló originalmente en el \textbf{Acelerador Lineal de Stanford en la década de 1980} y ahora lo mantiene (como EGSnrc modificado) el \textbf{Consejo Nacional de Investigación de Canadá}. 
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Simulaciones análogas}
+
+    Como señala el \textbf{TG 105}, una \textbf{simulación análoga} es la \textbf{propagación aleatoria de una partícula a través de los siguientes cuatro pasos}:
+
+    \begin{enumerate}
+        \item Determinar la distancia hasta la siguiente interacción.
+        \item Transportar la partícula al sitio de interacción.
+        \item Seleccionar qué interacción tendrá lugar.
+        \item Simular esta interacción.
+    \end{enumerate}
+
+    El \textbf{paso inicial} se realiza en función de la \textbf{probabilidad de que la partícula interactúe dentro del medio en cuestión}.
+
+\end{frame}
+
+\begin{frame}
+
+    Por ejemplo, si la \textbf{probabilidad de interacción está representada por un coeficiente de atenuación} $\mu$, se puede determinar una \textbf{distancia de interacción aleatoria} $r$ a partir de un \textbf{número aleatorio $\varepsilon$ (entre 0 y 1)} mediante lo siguiente:
+
+    \vspace{-0.2cm}
+
+    \bae
+    r=-\frac{(1-\varepsilon)}{\mu}
+    \eae
+
+    \vspace{-0.2cm}
+
+    El \textbf{segundo paso }es relativamente sencillo, pero se requiere conocimiento de la \textbf{densidad de masa} (y los cambios correspondientes en $\mu$) para \textbf{materiales heterogéneos}. 
+    
+    Se realizará otra \textbf{elección aleatoria para el paso 3}, \textbf{ponderada proporcionalmente a las probabilidades relativas de las opciones de interacción} (Compton, fotoeléctrico, pp). 
+    
+    \textbf{Finalmente} se deben \textbf{simular aleatoriamente los resultados de la interacción}, incluyendo las \textbf{partículas de nueva energía} (si no son absorbidas) y su \textbf{trayectoria}.
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Historiales condensados}
+
+    Si bien las \textbf{simulaciones análogas funcionan bien para las interacciones de fotones}, surge un \textbf{problema} práctico para el transporte de \textbf{electrones}.
+
+    El \textbf{camino libre medio para los electrones en el rango de energía terapéutica es del orden de $10^{-5} \, g/cm^2$}. Esto significa que \textbf{un solo electrón de energía $>1 \, MeV$ tendrá más de 105 interacciones antes de detenerse}. Realizar una simulación análoga de este evento \textbf{no es práctico}.
+
+    La \textbf{técnica del transporte de electrones de historial condensado} fue introducida por primera vez por \textbf{Berger en 1963}. Observó que \textbf{la mayoría de las interacciones inelásticas de electrones no perdían mucha energía ni tenían un cambio direccional significativo}.
+
+    Estas \textbf{interacciones "suaves"} podrían \textbf{estar separadas por eventos "catastróficos" más significativos}, donde el electrón tuvo una \textbf{pérdida de energía significativa} (ejem., producción de rayos delta, evento Bremsstrahlung).
+
+\end{frame}
+
+\begin{frame}
+
+    \vspace{1cm}
+
+    Las \textbf{interacciones suaves} podrían \textbf{simularse por separado combinándolas en interacciones virtuales únicas de gran efecto}, mientras que los \textbf{eventos catastróficos pueden simularse de forma análoga} como se describió anteriormente.
+
+    Para \textbf{electrones con energías superiores a un umbral de energía}, el camino libre medio para interacciones catastróficas es \textbf{varios órdenes de magnitud mayor}.
+
+    Si bien este enfoque \textbf{permite cálculos más rápidos}, se ha demostrado que la elección del \textbf{tamaño de paso} para los historiales condensados produce \textbf{artefactos en los resultados}.
+    
+    Sin embargo, estos problemas han llevado a \textbf{métodos de historial condensado mejorados y de alta precisión}.
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Técnicas de reducción de varianza}
+
+    \textbf{ En lugar de simular eventos individuales} como en una simulación análoga, se pueden emplear \textbf{técnicas para mejorar la eficiencia del cálculo de MC para obtener un resultado particular}.
+
+    \begin{wrapfigure}{l}{0.25\textwidth}
+        \centering
+        \includegraphics[width=0.25\textwidth]{var.pdf}
+    \end{wrapfigure}
+
+    Las \textbf{técnicas de reducción de la varianza} se utilizan para \textbf{reducir la varianza} de un resultado de cálculo determinado para un \textbf{número determinado de historiales}.
+
+    Por ejemplo, una \textbf{simulación análoga de un evento Bremsstrahlung} seleccionaría aleatoriamente \textbf{una energía y una dirección} (proporcional a sus respectivas probabilidades) para la \textbf{emisión de fotones resultante}. 
+    
+    \textbf{Alternativamente, se podría simular la emisión de una gran cantidad de fotones con pesos más bajos} para \textbf{imitar mejor la emisión direccional aleatoria de estos eventos}.
+
+\end{frame}
+
+\begin{frame}
+
+    Esta técnica particular se denomina \textbf{división Bremsstrahlung} y es una de las muchas técnicas diferentes que pueden emplearse dentro de un código MC particular. 
+    
+    Las \textbf{técnicas son importantes para mantener los tiempos de cálculo prácticos} en la mayoría de las situaciones. 
+
+    Se debe \textbf{tener cuidado de que la física subyacente no esté sesgada por los resultados}.
+
+    \vspace{0.2cm}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.45\textwidth]{var.pdf}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Cálculos de dosis de radioterapia de Monte Carlo}
+
+    En principio, \textbf{es posible simular historiales de toda la administración de radioterapia}, $\rightarrow$ desde el \textbf{impacto inicial del electrón acelerado sobre el objetivo hasta la dosis administrada}. 
+    
+    Sin embargo, este \textbf{sería un proceso tremendamente ineficaz}, ya que \textbf{pocos de estos historiales pasarían del acelerador hasta llegar al paciente}. 
+
+    Alternativamente, \textbf{es posible transportar las partículas a través de estructuras independientes del paciente} (por ejemplo, objetivo, colimador primario, cámara de iones) y \textbf{almacenar esta información para uso futuro}. 
+
+    \textbf{Esta información se conoce como archivo de espacio de fases} y contiene información que incluye la \textbf{posición, la energía y la dirección de los fotones y electrones emitidos por el acelerador}.
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%
 
-\Section{metodo de ordenadas discretas}
+\Section{Metodo de ordenadas discretas}
 
 \begin{frame}[standout]
     \centering\LARGE

@@ -1,7 +1,7 @@
 \babel@toc {spanish}{}\relax 
 \beamer@sectionintoc {1}{\lowercase {Introduccion}}{2}{0}{1}
 \beamer@sectionintoc {2}{\lowercase {La representacion del paciente}}{7}{0}{2}
-\beamer@sectionintoc {3}{\lowercase {fisica basica de la radiacion}}{12}{0}{3}
-\beamer@sectionintoc {4}{\lowercase {algoritmo de superposicion/convolucion}}{20}{0}{4}
-\beamer@sectionintoc {5}{\lowercase {monte carlo}}{21}{0}{5}
-\beamer@sectionintoc {6}{\lowercase {metodo de ordenadas discretas}}{22}{0}{6}
+\beamer@sectionintoc {3}{\lowercase {Fisica basica de la radiacion}}{12}{0}{3}
+\beamer@sectionintoc {4}{\lowercase {Algoritmo de superposicion/convolucion}}{20}{0}{4}
+\beamer@sectionintoc {5}{\lowercase {Monte Carlo}}{42}{0}{5}
+\beamer@sectionintoc {6}{\lowercase {Metodo de ordenadas discretas}}{51}{0}{6}
