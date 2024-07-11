@@ -4,4 +4,4 @@
 \beamer@sectionintoc {3}{\lowercase {Fisica basica de la radiacion}}{12}{0}{3}
 \beamer@sectionintoc {4}{\lowercase {Algoritmo de superposicion/convolucion}}{20}{0}{4}
 \beamer@sectionintoc {5}{\lowercase {Monte Carlo}}{42}{0}{5}
-\beamer@sectionintoc {6}{\lowercase {Metodo de ordenadas discretas}}{51}{0}{6}
+\beamer@sectionintoc {6}{\lowercase {Metodo de ordenadas discretas}}{52}{0}{6}

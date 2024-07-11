@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{amssymb}
-\usepackage{amsmath}
+\usepackage{amsmath,bm}
 \usepackage{rotating}
 \usepackage{graphicx}
 \usepackage[mathscr]{euscript}
@@ -41,6 +41,8 @@
 \newcommand{\pr}{\right)}
 \newcommand{\kl}{\left[}
 \newcommand{\kr}{\right]}
+\definecolor{Grayo}{RGB}{72, 72, 72}
+\definecolor{Graya}{RGB}{158, 158, 158}
 
 \setbeamertemplate{footline}[frame number]
 
@@ -860,6 +862,21 @@
 
 \end{frame}
 
+\begin{frame}
+
+    Sección transversal de un \textbf{acelerador lineal de Varian} en modo de haz de fotones que demuestra una \textbf{posible ubicación de un plano de espacio de fase ubicado distal a todos los componentes independientes del paciente del cabezal del acelerador}.
+
+    \begin{wrapfigure}{l}{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.48\textwidth]{trata.jpg}
+    \end{wrapfigure}
+    
+    Una vez calculada inicialmente, \textbf{esta información se puede utilizar continuamente para calcular la dosis para pacientes individuales}.
+    
+    También puede ser \textbf{ventajoso crear planos de espacio de fase más abajo en la trayectoria del haz} (espacio de fase 2), particularmente para configuraciones de colimador estándar y/o modificadores de haz. De lo contrario, estos datos se pueden proyectar directamente sobre el paciente para calcular la dosis.
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \Section{Metodo de ordenadas discretas}
@@ -867,6 +884,374 @@
 \begin{frame}[standout]
     \centering\LARGE
     \textbf{\itshape\scshape Método de ordenadas discretas}
+\end{frame}
+
+\begin{frame}
+
+    Más recientemente, varios autores han informado sobre una \textbf{solución numérica directa de las ecuaciones de transporte de Boltzmann} (BTEs).
+
+    El enfoque se ha \textbf{comercializado en el sistema de planificación de tratamiento Varian Eclipse}, bajo el nombre de \textbf{Acuros}. 
+    
+    En particular, esta metodología se ha propuesto como una \textbf{alternativa a los cálculos de MC}, con el fin de \textbf{producir distribuciones de dosis precisas con un tiempo de cálculo sustancialmente reducido}.
+
+    \vspace{-0.05cm}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.45\textwidth]{A.jpg}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Derivación de las ecuaciones de transporte}
+
+    La \textbf{ecuación de transporte lineal de Boltzmann} se puede derivar \textbf{suponiendo la conservación de partículas dentro de un elemento de volumen pequeño del espacio de fases}.
+
+    Definimos una cantidad llamada \textbf{densidad angular de electrones}, $N_e(\mathbf{r},\bm{\Omega},E,t)$, que representa el número probable de electrones en la ubicación $\mathbf{r}$ y dirección $\bm{\Omega}$ con energía $E$ en el tiempo $t$ por unidad de volumen por unidad de ángulo sólido por unidad energía. 
+    
+    $\bm{\Omega}$ representa el vector unitario en la dirección del movimiento, es decir, paralelo a $\mathbf{v}$.
+
+    Por lo tanto, $N_e(\mathbf{r},\bm{\Omega},E,t)$ d$V$ d$\Omega$ d$E$  representa el \textbf{número de electrones en el tiempo $t$ en un elemento de volumen d$V$ alrededor de $r$, en un haz estrecho de ángulo sólido d$\Omega$ alrededor de $\Omega$, y rango de energía d$E$ alrededor de $E$}.
+
+\end{frame}
+
+\begin{frame}
+
+    Después de un tiempo $\Delta t$, estos electrones se han movido a la posición $\mathbf{r} + \mathbf{v} \Delta t $, y se han reducido debido a colisiones dentro del medio en una cantidad $e^{-\sigma v \Delta t}$.
+
+    Aquí $\sigma$ es la \textit{sección transversal macroscópica} de los electrones y representa $1/\lambda$, donde $\lambda$ es el \textbf{camino libre medio}.
+
+    Para \textbf{tiempos muy cortos} $\Delta t$
+
+    \begin{center}
+        \begin{tcolorbox}[colback=gray!25!white,colframe=gray, title=\textbf{Serie de Taylor (exponencial)},width=0.5\linewidth, center title]
+            \vspace{-0.5cm}
+            \be
+                e^{x} = \sum_{n=0}^{\infty} \frac{x^{n}}{n!} = 1 + x + \frac{x^2}{2!} + \dots
+            \ee
+        \end{tcolorbox}
+    \end{center}
+
+    \be
+    \Rightarrow \mathbf{r} + \mathbf{v} \Delta t \rightarrow N_e(1-\sigma v \Delta t) \text{d}V \text{d}\Omega \text{d}E
+    \ee
+
+\end{frame}
+
+\begin{frame}
+
+    \vspace{0.6cm}
+
+    Al mismo tiempo, los \textbf{electrones dispersos desde otras partes del medio pueden alcanzar la misma posición} $(\mathbf{r} + \mathbf{v} \Delta t)$.
+
+    Esta cantidad puede determinarse \textbf{integrando la densidad angular sobre el espacio de fase multiplicada por la probabilidad de estas interacciones}:
+
+    \bae
+    N_e^{scatter}(\mathbf{r} + \mathbf{v} \Delta t , t + \Delta t) = \int \int N_e(r,t) \kl \frac{\dd[2]{\sigma}}{\dd E \dd \bm{\Omega}} (\bm{\Omega}',\mathbf{E}';\bm{\Omega},\mathbf{E}) \kr \text{d}\bm{\Omega} \text{d}\mathbf{E}
+    \eae
+
+    Donde $\frac{\dd[2]{\sigma}}{\dd E \dd \bm{\Omega}} (\bm{\Omega}',\mathbf{E}';\bm{\Omega},\mathbf{E})$ representa la sección transversal diferencial doble para la dispersión de electrones desde la energía $\mathbf{E}'$ y la dirección $\bm{\Omega}'$ hasta la energía $\mathbf{E}$ y la dirección $\bm{\Omega}$.
+
+\end{frame}
+
+\begin{frame}
+
+    Además, \textbf{cualquier fuente adicional de electrones producida durante el tiempo $\Delta t$ también puede alcanzar la posición $r + v \Delta t$}. 
+    
+    En este caso, el número de electrones adicionales en $r + v \Delta t$ se convierte en $Q(\mathbf{r},\bm{\Omega},E,t) \Delta t$, donde $Q(\mathbf{r},\bm{\Omega},E,t)$ representa la tasa de producción de electrones de otras fuentes.
+
+    El número total de electrones en la posición $r + v\Delta t$ ahora viene dado por la siguiente ecuación:
+
+    \be
+    N_e(\mathbf{r} + \mathbf{v} \Delta t, \bm{\Omega}, E, t + \Delta t) = N_e(\mathbf{r},\bm{\Omega}, E, t) (1- \sigma v \Delta t) 
+    \ee
+    \be
+    + \kl \int \int N_e(r,t) \pl \frac{\dd[2]{\sigma}}{\dd E \dd \bm{\Omega}} (\bm{\Omega}',\mathbf{E}';\bm{\Omega},\mathbf{E}) \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} \kr \Delta t + Q(\mathbf{r},\bm{\Omega},E,t) \Delta t
+    \ee
+
+\end{frame}
+
+\begin{frame}
+
+    Dividiendo la ecuación por $\Delta t$, y tomando el límite $\Delta t  \rightarrow 0 $, obtenemos
+
+    \vspace{-0.3cm}
+
+    \be
+    \Rightarrow  \lim_{\Delta t  \rightarrow 0} \kl \frac{N_e(\mathbf{r} + \mathbf{v} \Delta t, \bm{\Omega}, E, t + \Delta t)}{\Delta t} \kr = 
+    \ee
+    \be
+    \lim_{\Delta t  \rightarrow 0} \kl \frac{N_e(\mathbf{r},\bm{\Omega}, E, t)}{\Delta t} \kr  - \sigma v N_e(\mathbf{r},\bm{\Omega}, E, t) + \int \int N_e(r,t) \pl \frac{\dd[2]{\sigma}}{\dd E \dd \bm{\Omega}} (\bm{\Omega}',\mathbf{E}';\bm{\Omega},\mathbf{E}) \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} 
+    \ee
+    \be
+    + Q(\mathbf{r},\bm{\Omega},E,t)
+    \ee
+
+    \be
+    \Rightarrow  \lim_{\Delta t  \rightarrow 0} \kl \frac{N_e(\mathbf{r} + \mathbf{v} \Delta t, \bm{\Omega}, E, t + \Delta t) - N_e(\mathbf{r},\bm{\Omega}, E, t)}{\Delta t} \kr + \sigma v N_e(\mathbf{r},\bm{\Omega}, E, t) = 
+    \ee
+    \be
+    \int \int N_e(r,t) \pl \frac{\dd[2]{\sigma}}{\dd E \dd \bm{\Omega}} (\bm{\Omega}',\mathbf{E}';\bm{\Omega},\mathbf{E}) \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} + Q(\mathbf{r},\bm{\Omega},E,t)
+    \ee    
+
+\end{frame}
+
+\begin{frame}
+
+    \be
+    \lim_{\Delta t  \rightarrow 0} \kl \frac{N_e(\mathbf{r} + \mathbf{v} \Delta t, \bm{\Omega}, E, t + \Delta t) - N_e(\mathbf{r},\bm{\Omega}, E, t)}{\Delta t} \kr
+    \ee
+
+    El término límite representa la derivada temporal total de $N_e$ para un observador que se mueve con el paquete de electrones (es decir, de $\mathbf{r}$ a $\mathbf{r} + \mathbf{v} \Delta t$). Puede reescribirse para simplificar la ecuación:
+
+    \be
+    \lim_{\Delta t  \rightarrow 0} \kl \frac{N_e(\mathbf{r} + \mathbf{v} \Delta t, t + \Delta t) - N_e(\mathbf{r}, t)}{\Delta t} \kr = 
+    \ee
+    \be
+    \lim_{\Delta t  \rightarrow 0} \kl \frac{N_e(\mathbf{r} + \mathbf{v} \Delta t, t + \Delta t) - N_e(\mathbf{r}, t + \Delta t)}{\Delta t} \kr + \lim_{\Delta t  \rightarrow 0} \kl \frac{N_e(\mathbf{r}, t + \Delta t) - N_e(\mathbf{r}, t)}{\Delta t} \kr
+    \ee
+
+\end{frame}
+
+\begin{frame}
+
+    \vspace{1.4cm}
+
+    \begin{center}
+        \begin{tcolorbox}[colback=gray!25!white,colframe=gray, title=\textbf{Definición de derivada},width=0.45\linewidth, center title]
+            \vspace{-0.4cm}
+            \be
+                \dv{f(t)}{t} = \lim_{\Delta t  \rightarrow 0} \kl \frac{f(t + \Delta t) - f(t)}{\Delta t} \kr
+            \ee
+        \end{tcolorbox}
+    \end{center}
+
+    Por lo cual
+
+    \be
+    \lim_{\Delta t  \rightarrow 0} \kl \frac{N_e(\mathbf{r}, t + \Delta t) - N_e(\mathbf{r}, t)}{\Delta t} \kr = \pdv{N_e(\mathbf{r}, t)}{t}
+    \ee
+
+\end{frame}
+
+
+\begin{frame}
+
+    \vspace{1.4cm}
+
+    \begin{center}
+        \begin{tcolorbox}[colback=gray!25!white,colframe=gray, title=\textbf{Gradiente},width=0.45\linewidth, center title]
+            \vspace{-0.5cm}
+            \be
+                \nabla f(r,\theta,\phi) = \pdv{f}{r} \hat{r} + \pdv{f}{\theta} \hat{\theta} + \pdv{f}{\phi} \hat{\phi}
+            \ee
+        \end{tcolorbox}
+    \end{center}
+
+    Por lo cual
+
+    \be
+    \lim_{\Delta t  \rightarrow 0} \kl \frac{N_e(\mathbf{r} + \mathbf{v} \Delta t, t + \Delta t) - N_e(\mathbf{r}, t + \Delta t)}{\Delta t} \kr = \mathbf{v} \cdot \nabla N_e(\mathbf{r}, t)
+    \ee
+    
+\end{frame}
+
+\begin{frame}
+
+    \bae \label{dd}
+    \Rightarrow \lim_{\Delta t  \rightarrow 0} \kl \frac{N_e(\mathbf{r} + \mathbf{v} \Delta t, \bm{\Omega}, E, t + \Delta t) - N_e(\mathbf{r},\bm{\Omega}, E, t)}{\Delta t} \kr = \mathbf{v} \cdot \nabla N_e(\mathbf{r}, t) + \pdv{N_e(\mathbf{r}, t)}{t}
+    \eae
+
+    El \textbf{primer término} de la ecuación \eqref{dd} representa la velocidad multiplicada por la derivada direccional de $N_e$ en la dirección de $\bm{\Omega}$. Se conoce como término de flujo, ya que representa la diferencia en la derivada del tiempo entre los marcos en movimiento y en reposo, el \textbf{último término} incluye los efectos de los electrones que pasan por $r$ sin colisiones.
+
+    Finalmente tenemos que
+
+    \bae
+    \pdv{N_e}{t} + \mathbf{v} \cdot \nabla N_e + \sigma v N_e = \int \int N_e' \pl \frac{\dd[2]{\sigma}}{\dd E \dd \bm{\Omega}} \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} + Q
+    \eae
+    
+\end{frame}
+
+\begin{frame}
+
+    \vspace{0.3cm}
+
+    \be
+    \pdv{N_e}{t} + \mathbf{v} \cdot \nabla N_e + \sigma v N_e = \int \int N_e' \pl \frac{\dd[2]{\sigma}}{\dd E \dd \bm{\Omega}} \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} + Q
+    \ee
+
+    Esta es la forma básica de la \textbf{ecuación de transporte}, que a menudo se denomina \textbf{ecuación de Boltzmann} debido a su similitud con la expresión derivada por Boltzmann que involucra la teoría cinética de los gases.
+
+    Se escribe más a menudo en términos de \textbf{flujo angular} $\bm{\Psi}_e$,  donde $\bm{\Psi}_e(\mathbf{r},\bm{\Omega},E,t) = v N_e(\mathbf{r},\bm{\Omega},E,t)$:
+
+    \bae
+    \frac{1}{v}\pdv{\bm{\Psi}_e}{t} + \bm{\Omega} \cdot \nabla \bm{\Psi}_e + \sigma \bm{\Psi}_e = \int \int \bm{\Psi}_e' \pl \frac{\dd[2]{\sigma}}{\dd E \dd \bm{\Omega}} \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} + Q
+    \eae
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Uso de las ecuaciones de transporte para cálculos de haces de fotones}
+
+    En la \textbf{radioterapia con haz externo}, se utiliza la forma \textbf{independiente del tiempo} de la ecuación \eqref{dd}, ya que el estado estacionario se logra en un tiempo mucho más corto que cuando el haz está encendido.
+
+    La ecuación \eqref{dd} es una \textbf{ecuación diferencial integroparcial} que se puede \textbf{resolver numéricamente utilizando métodos estocásticos o deterministas}.
+
+    La mayoría de los informes han utilizado este último, empleando algún tipo de \textbf{método numérico basado en cuadrículas} en el que el espacio de fase se discretiza en coordenadas espaciales, angulares y de energía, sin embargo, \textbf{existen algunas diferencias en la literatura sobre qué técnicas se utilizan}.
+
+    Los métodos de \textbf{diferencias finitas y elementos finitos} son algunos que utilizan para la discretización espacial.
+
+\end{frame}
+
+\begin{frame}
+
+    Alternativamente, el método de \textbf{ordenadas discretas} se ha empleado para la discretización angular en el solucionador \textbf{Attila} y en el posterior algoritmo \textbf{Acuros XB} actualmente disponible en el sistema de planificación de tratamiento \textbf{Varian Eclipse}.
+
+    \begin{wrapfigure}{r}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{varian.png}
+    \end{wrapfigure}
+
+    Los datos de la \textbf{sección transversal de fotones-electrones acoplados} dependientes de la energía están disponibles a través de \textbf{CEPXS}, que utiliza el método \textbf{multigrupo} para discretizar el dominio de energía de las partículas en \textbf{intervalos o grupos de energía}.
+
+    Esta \textbf{clase de solucionadores} se conoce comúnmente como \textbf{método de ordenadas discretas}, aunque técnicamente el nombre solo se refiere al método para \textbf{discretizar numéricamente en ángulo}.
+
+\end{frame}
+
+\begin{frame}
+
+    Hasta ahora, sólo hemos discutido la \textbf{densidad angular de los electrones (o flujo angular)}. Sin embargo, en los cálculos de haces externos, las colisiones \textbf{involucran fotones, electrones y positrones}.
+
+    En principio, la ecuación \eqref{dd} se convierte entonces en un \textbf{conjunto de ecuaciones acopladas}. Por ejemplo, excluyendo las interacciones de positrones, tenemos lo siguiente:
+
+    \be
+    \bm{\Omega} \cdot \nabla \bm{\Psi}_{\gamma} + \sigma_{\gamma} \bm{\Psi}_{\gamma} + \int \int \bm{\Psi}_e' \pl \frac{\dd[2]{\sigma_{e\gamma}}}{\dd E \dd \bm{\Omega}} \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} + \int \int \bm{\Psi}_\gamma' \pl \frac{\dd[2]{\sigma_{\gamma\gamma}}}{\dd E \dd \bm{\Omega}} \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} + Q_{\gamma}
+    \ee
+
+    \be
+    \bm{\Omega} \cdot \nabla \bm{\Psi}_{e} + \sigma_{e} \bm{\Psi}_{e} + \int \int \bm{\Psi}_\gamma' \pl \frac{\dd[2]{\sigma_{\gamma e}}}{\dd E \dd \bm{\Omega}} \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} + \int \int \bm{\Psi}_e' \pl \frac{\dd[2]{\sigma_{ee}}}{\dd E \dd \bm{\Omega}} \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} + Q_{e}
+    \ee
+
+    Donde $\frac{\dd[2]{\sigma_{1,2}}}{\dd E \dd \bm{\Omega}}$ representa la sección transversal diferencial para la creación de la partícula 2 con energía $E$, dirección $\bm{\Omega}$, de la partícula 1 de energía $E'$, dirección $\bm{\Omega}'$.
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Implementación de las ecuaciones de transporte lineal de Boltzmann en Acuros XB}
+
+    Actualmente, la \textbf{única implementación comercial del BTE lineal es el algoritmo de cálculo de dosis Acuros XB} disponible en el sistema de planificación de tratamiento \textbf{Varian Eclipse}.
+
+    \textbf{Acuros XB} ha adaptado y optimizado los métodos de \textbf{Attila} para cálculos de haces de fotones externos.
+
+    Dentro del algoritmo \textbf{Acuros}, se supone que \textbf{ambas partículas cargadas de la producción de pares son electrones}, y se supone que la \textbf{contribución de Bremsstrahlung producida por electrones dentro del paciente se deposita localmente}.
+
+    Como ya se mencionó, la \textbf{discretización de energía se realiza utilizando una representación multigrupo de la sección transversal}.
+
+\end{frame}
+
+\begin{frame}
+
+    Sin embargo, esto es difícil para los electrones donde la sección \textbf{transversal inelástica aumenta rápidamente cuando las pérdidas de energía se vuelven pequeñas}. Estas \textbf{interacciones “suaves”} requerirían una \textbf{gran cantidad de contenedores de energía} para describirlas con precisión, lo cual \textbf{no es práctico} para una solución eficiente.
+
+    Como resultado, las \textbf{interacciones de los electrones se dividen en pérdidas de energía grandes y pequeñas}, estas últimas se describen mediante una \textbf{aproximación de desaceleración continua (CSD)}.
+
+    En este caso, la \textbf{fluencia angular de los electrones se describe mediante la ecuación de transporte de Boltzmann-Fokker-Planck}:
+
+    \vspace{-0.2cm}
+
+    \bae
+    \bm{\Omega} \cdot \nabla \bm{\Psi}_{e} + \sigma_{e} \bm{\Psi}_{e} - \pdv{S_r}{E} \bm{\Psi}_{e} + \int \int \bm{\Psi}_\gamma' \pl \frac{\dd[2]{\sigma_{\gamma e}}}{\dd E \dd \bm{\Omega}} \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} + \int \int \bm{\Psi}_e' \pl \frac{\dd[2]{\sigma_{ee}}}{\dd E \dd \bm{\Omega}} \pr \text{d}\bm{\Omega} \text{d}\mathbf{E} + Q_{e}
+    \eae
+
+    En este caso, $\sigma_{ee}$ representa interacciones “catastróficas” más grandes que están representadas por la dispersión estándar de Boltzmann.
+
+\end{frame}
+
+\begin{frame}
+
+    Gifford y cols. realizaron por primera vez una \textbf{evaluación del prototipo de solucionador Attila para cálculos de dosis de radioterapia}. 
+    
+    Los cálculos de dosis realizados por \textbf{Attila se compararon directamente con los calculados utilizando los códigos MC MCNPX} para un cálculo de braquiterapia y \textbf{EGS4 para un cálculo de haz de fotones externo}. Se compararon las diferencias en las dosis y las velocidades relativas de cálculo.
+
+    La \textbf{comparación del cálculo de la dosis de fotones se realizó comparando Attila versus EGS4} para un haz de fotones de \textbf{18 MV} de un acelerador \textbf{Varian 2100}.
+
+    Se utilizó una \textbf{geometría de haz estrecho para resaltar cualquier diferencia en las regiones de desequilibrio electrónico}. Además, se \textbf{utilizó un phantom heterogéneo de múltiples losas}, que estaba formado por agua, pulmón y aluminio. 
+    
+    El cálculo de \textbf{Atila se dividió en 24 y 36 grupos de energía de fotones y electrones}, respectivamente. 
+
+\end{frame}
+
+\begin{frame}
+
+    Se muestra una \textbf{comparación de las dosis en profundidad} entre estos dos cálculos. \textbf{Las concordancias obtenidas fueron buenas}, con una diferencia RMS del 0.7\% de la dosis máxima.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.85\textwidth]{g1.jpg}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+    \vspace{1cm}
+
+    Vassiliev et al. \textbf{ampliaron estas comparaciones para incluir cálculos de haz externo de geometrías heterogéneas de pacientes}. 
+
+    Attila se comparó con simulaciones de \textbf{EGSnrc MC para un haz de fotones de 6 MV} de un \textbf{Varian 2100} para una \textbf{próstata y un caso de cabeza y cuello} previamente tratado en su departamento. 
+
+    Los conjuntos de datos de CT se convirtieron en un mapa de cuatro materiales con densidades fijas: aire, tejido adiposo, tejido blando y hueso. 
+
+    En su comparación, los cálculos se realizaron con las \textbf{mismas geometrías de haz que las utilizadas clínicamente}, con la excepción de la \textbf{modulación del haz} que se eliminó para esta comparación.
+
+\end{frame}
+
+\begin{frame}
+
+    Se muestra el \textbf{mapa de materiales para un corte axial a través del centro del PTV para el caso de cabeza y cuello}.
+
+    \begin{wrapfigure}{l}{0.65\textwidth}
+        \centering
+        \includegraphics[width=0.65\textwidth]{g2.jpg}
+    \end{wrapfigure}
+
+    También se muestra la \textbf{distribución de dosis resultante realizada utilizando el motor de cálculo de dosis de Attila}.
+
+    Las \textbf{áreas negras} en cada imagen son regiones donde la \textbf{diferencia entre los cálculos de MC y BTE superó el 5\% de la dosis máxima}. 
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{wrapfigure}{l}{0.37\textwidth}
+        \centering
+        \includegraphics[width=0.37\textwidth]{g3.jpg}
+    \end{wrapfigure}
+
+    Se puede ver una \textbf{comparación más cuantitativa} observando un \textbf{perfil de dosis} a través del centro del PTV (Línea “L1”) y fuera del eje (Línea “L2”).
+
+    Se muestran los perfiles de dosis para los códigos Attila y EGSnrc para estas líneas.
+
+    La \textbf{concordancia general entre estos dos métodos fue buena}, con más del 98\% de los puntos de cálculo dentro de un criterio de $\pm 3\%/\pm3 \, mm$.
+
+\end{frame}
+
+\begin{frame}
+
+    \vspace{1.5cm}
+
+    Desde el lanzamiento de \textbf{Acuros XB}, se han realizado \textbf{varios estudios de planificación que investigan la eficiencia y precisión del método de ordenadas discretas}.
+
+    Se realizan \textbf{comparaciones con otros algoritmos de planificación} o con \textbf{resultados medidos para una variedad de sitios de tratamiento}, incluidos el pulmón, la mama y la nasofaringe. 
+
+    También se han informado \textbf{evaluaciones de Acuros para cálculos en medios heterogéneos o para tratamientos de radiocirugía}. 
+    
+    \textbf{Se remite al lector interesado a estas obras para obtener información adicional}.
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
