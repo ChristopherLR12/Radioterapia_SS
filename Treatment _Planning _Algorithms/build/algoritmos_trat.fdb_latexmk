@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/algoritmos_trat"] 1720672061.56931 "build/algoritmos_trat.bcf" "build/algoritmos_trat.bbl" "build/algoritmos_trat" 1720673021.74308 0
-  "build/algoritmos_trat.bcf" 1720673020 132911 da6e9dd0cd78af1b253967a3fdb90b8b "pdflatex"
+["biber build/algoritmos_trat"] 1720757493.77619 "build/algoritmos_trat.bcf" "build/algoritmos_trat.bbl" "build/algoritmos_trat" 1720757641.85368 0
+  "build/algoritmos_trat.bcf" 1720757640 132911 da6e9dd0cd78af1b253967a3fdb90b8b "pdflatex"
   "build/ref.bib" 1720225537 767 a03cf1e4a0fc54788767ef4e2115616f ""
   (generated)
   "build/algoritmos_trat.bbl"
   "build/algoritmos_trat.blg"
   (rewritten before read)
-["pdflatex"] 1720672974.68979 "c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/algoritmos_trat.tex" "build/algoritmos_trat.pdf" "algoritmos_trat" 1720673021.74422 0
+["pdflatex"] 1720757597.91757 "c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/algoritmos_trat.tex" "build/algoritmos_trat.pdf" "algoritmos_trat" 1720757641.85492 0
   "C:/Users/c-lop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1719533424 368666 6786bf159a6b011aec52df9114976bfb ""
   "C:/Users/c-lop/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1716605911 24240395 b8baf67a021c1bf4a19e2635bf43d211 ""
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/alegreya/algr_dte76s.enc" 1570565527 3385 9b484589f736b60f47e8681999520386 ""
@@ -358,7 +358,7 @@
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/svgnam.def" 1700127522 4705 ec4d2f4b7125d5a5145cc9aabae1d54b ""
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "algoritmos_trat.tex" 1720672973 65492 28960c47bf6967e6605b9f4b1bfdd675 ""
+  "algoritmos_trat.tex" 1720757565 65490 da55baf1cb3caceb8c545513ec712119 ""
   "beamercolorthemeArguelles.sty" 1716606965 561 47c5d88222a119814bd22183c20e0844 ""
   "beamerfontthemeArguelles.sty" 1716606961 1032 d58eba50fab82b7d51d2f2ec2ffddace ""
   "beamerinnerthemeArguelles.sty" 1716668933 4140 84a6fc4b1b7a14a18fb5071a662bc98f ""
@@ -366,11 +366,11 @@
   "beamerthemeArguelles.sty" 1716606951 2849 d0a87baf87dd7b9b370d15e8444b2cc7 ""
   "build/A.jpg" 1720649943 632083 11e6006bade15dc95a2248d95e0fded2 ""
   "build/CS.pdf" 1720482670 3078 b008d41541647493170de285cf12f775 ""
-  "build/algoritmos_trat.aux" 1720673020 13856 d73855346dfb919d323b5935a552ef6d "pdflatex"
-  "build/algoritmos_trat.bbl" 1720672068 4409 7d79143149060cf8c67c67f45faab821 "biber build/algoritmos_trat"
-  "build/algoritmos_trat.nav" 1720673020 8811 63449c1d3832605625ce25f5ff762353 "pdflatex"
-  "build/algoritmos_trat.out" 1720673020 1232 552c9b2fe61b0ce41954b02796b43405 "pdflatex"
-  "build/algoritmos_trat.run.xml" 1720673020 2469 d034f426453ee67f9cb02c236fd227e3 "pdflatex"
+  "build/algoritmos_trat.aux" 1720757640 13856 d73855346dfb919d323b5935a552ef6d "pdflatex"
+  "build/algoritmos_trat.bbl" 1720757500 4409 7d79143149060cf8c67c67f45faab821 "biber build/algoritmos_trat"
+  "build/algoritmos_trat.nav" 1720757640 8811 63449c1d3832605625ce25f5ff762353 "pdflatex"
+  "build/algoritmos_trat.out" 1720757640 1232 552c9b2fe61b0ce41954b02796b43405 "pdflatex"
+  "build/algoritmos_trat.run.xml" 1720757640 2469 d034f426453ee67f9cb02c236fd227e3 "pdflatex"
   "build/comp.pdf" 1720322438 3416 de7bd3b1b2bfa29b076b78264027fff9 ""
   "build/ct.jpeg" 1720236099 7998 4baefe5dac318dc232c547f757d79aef ""
   "build/dr.pdf" 1720577052 3538 f4a751065edf88a6be221754acdd231a ""
@@ -396,7 +396,7 @@
   "build/var.pdf" 1720583790 1828 f25c5b48e7a9cfe0e53186d8fcc992df ""
   "build/varian.png" 1720669797 43508 cede5de022d76ed07a0089ef09309799 ""
   "build/white.png" 1716610906 3693418 bb234d08c48066e48b963ebbbced4585 ""
-  "c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/algoritmos_trat.tex" 1720672973 65492 28960c47bf6967e6605b9f4b1bfdd675 ""
+  "c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Treatment _Planning _Algorithms/algoritmos_trat.tex" 1720757565 65490 da55baf1cb3caceb8c545513ec712119 ""
   (generated)
   "build/algoritmos_trat.aux"
   "build/algoritmos_trat.bcf"
