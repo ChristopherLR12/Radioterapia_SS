@@ -8,6 +8,8 @@
 \usepackage{rotating}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{subfigure}
+\usepackage{subcaption}
 \usepackage[mathscr]{euscript}
 \usepackage[dvipsnames,svgnames,table]{xcolor}
 \usepackage{multicol}
@@ -19,6 +21,8 @@
 \usepackage{hyperref}
 \usepackage{apacite}
 \usepackage{etoolbox}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\input{definitions}
 %\input{qmdef}
@@ -66,11 +70,23 @@
 
 \section*{AP-PA}
 
-\begin{figure}[h]
+\begin{figure}[!h]
     \centering
-    \includegraphics[width=0.25\textwidth]{APPA.pdf}
-    \caption{Distribución campos AP-PA.}
-    \label{APPA}
+    \begin{minipage}[t]{0.5\linewidth}
+        \centering
+        \begin{tcolorbox}[colback=gray!25!white, colframe=gray, title=\textbf{Resumen}, center title]
+            \begin{itemize}
+                \item sdf
+            \end{itemize}
+        \end{tcolorbox}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.5\linewidth}
+        \centering
+        \includegraphics[width=0.5\linewidth]{APPA.pdf}
+        \caption{Distribución campos AP-PA.}
+        \label{APPA}
+    \end{minipage}
 \end{figure}
 
 \subsection*{Preinspección}
