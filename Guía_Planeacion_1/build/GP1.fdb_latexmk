@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1722487976.46202 "c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Guía_Planeacion_1/GP1.tex" "build/GP1.pdf" "GP1" 1722487979.19715 0
+["pdflatex"] 1722652065.0658 "c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Guía_Planeacion_1/GP1.tex" "build/GP1.pdf" "GP1" 1722652068.17937 0
   "C:/Users/c-lop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1719533424 368666 6786bf159a6b011aec52df9114976bfb ""
   "C:/Users/c-lop/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1716605911 24240395 b8baf67a021c1bf4a19e2635bf43d211 ""
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -19,6 +19,7 @@
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1247596667 32001 6aeea3afe875097b1eb0da29acd61e28 ""
+  "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
@@ -169,11 +170,15 @@
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/svgnam.def" 1700127522 4705 ec4d2f4b7125d5a5145cc9aabae1d54b ""
   "C:/Users/c-lop/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "GP1.tex" 1722487972 10034 1819ea87c19fefc427f2830f0b71d337 ""
+  "GP1.tex" 1722652064 41879 646c6e96389c8b8f81cd46b7f7095d08 ""
   "build/APPA.pdf" 1722296489 11775 ce8a175f1990480c9fa662fa2aaa774e ""
-  "build/GP1.aux" 1722487978 606 ae5153f1bb9aa4f034faa265066d3704 "pdflatex"
-  "build/GP1.out" 1722487978 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Guía_Planeacion_1/GP1.tex" 1722487972 10034 1819ea87c19fefc427f2830f0b71d337 ""
+  "build/APPAO.pdf" 1722641665 15967 209638e40dd9c5558d0ce55ee3bef4e0 ""
+  "build/CAJA.pdf" 1722641976 15546 4ae0118daec113e857ffcd8305ea2e8b ""
+  "build/GP1.aux" 1722652067 9371 416ca6025cd87aba92274be10363b1b6 "pdflatex"
+  "build/GP1.out" 1722652067 11428 2850c83d3341e45136d7feded15b39a3 "pdflatex"
+  "build/HOLO.pdf" 1722641838 11516 924ee0d1975b15647d7a6e20b9d42f44 ""
+  "build/IMRT.pdf" 1722647171 25426 b9afedbfd88cea38b8313cf5e8a17656 ""
+  "c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Guía_Planeacion_1/GP1.tex" 1722652064 41879 646c6e96389c8b8f81cd46b7f7095d08 ""
   (generated)
   "build/GP1.aux"
   "build/GP1.log"

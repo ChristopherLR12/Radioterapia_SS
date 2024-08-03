@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.24)  31 JUL 2024 22:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.24)  2 AUG 2024 20:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -713,14 +713,14 @@ LaTeX Font Info:    ... okay on input line 48.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
-* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=500.484pt
-* \textheight=652.70622pt
+* \textheight=681.15898pt
 * \oddsidemargin=-15.36449pt
 * \evensidemargin=-15.36449pt
-* \topmargin=-38.1381pt
+* \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -776,21 +776,46 @@ File: spanish.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 138.
 LaTeX Info: Redefining \BHBI on input line 139.
 )
-<APPA.pdf, id=6, 102.1828pt x 223.3898pt>
-File: APPA.pdf Graphic file (type pdf)
-<use APPA.pdf>
-Package pdftex.def Info: APPA.pdf  used on input line 86.
-(pdftex.def)             Requested size: 125.12099pt x 273.54411pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 102.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
  (C:\Users\c-lop\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 102.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
  (C:\Users\c-lop\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+<APPA.pdf, id=239, 102.1828pt x 223.3898pt>
+File: APPA.pdf Graphic file (type pdf)
+<use APPA.pdf>
+Package pdftex.def Info: APPA.pdf  used on input line 103.
+(pdftex.def)             Requested size: 100.09526pt x 218.83188pt.
+ [1
 
-{C:/Users/c-lop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Guía_Planeacion_1/build/APPA.pdf>] [2] [3] (c:\Users\c-lop\Documents\GitHub\Radioterapia_SS\Guía_Planeacion_1\build\GP1.aux
+{C:/Users/c-lop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2 <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Guía_Planeacion_1/build/APPA.pdf>] [3]
+<APPAO.pdf, id=292, 178.56079pt x 223.38982pt>
+File: APPAO.pdf Graphic file (type pdf)
+<use APPAO.pdf>
+Package pdftex.def Info: APPAO.pdf  used on input line 192.
+(pdftex.def)             Requested size: 200.19054pt x 250.46758pt.
+ [4 <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Guía_Planeacion_1/build/APPAO.pdf>] [5]
+<HOLO.pdf, id=352, 241.0207pt x 101.4703pt>
+File: HOLO.pdf Graphic file (type pdf)
+<use HOLO.pdf>
+Package pdftex.def Info: HOLO.pdf  used on input line 283.
+(pdftex.def)             Requested size: 300.29344pt x 126.43344pt.
+ [6 <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Guía_Planeacion_1/build/HOLO.pdf>] [7] [8]
+<CAJA.pdf, id=399, 248.54863pt x 223.38977pt>
+File: CAJA.pdf Graphic file (type pdf)
+<use CAJA.pdf>
+Package pdftex.def Info: CAJA.pdf  used on input line 374.
+(pdftex.def)             Requested size: 250.24199pt x 224.90947pt.
+ [9 <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Guía_Planeacion_1/build/CAJA.pdf>] [10]
+<IMRT.pdf, id=459, 267.62172pt x 266.0934pt>
+File: IMRT.pdf Graphic file (type pdf)
+<use IMRT.pdf>
+Package pdftex.def Info: IMRT.pdf  used on input line 466.
+(pdftex.def)             Requested size: 250.24199pt x 248.82042pt.
+ [11] [12 <c:/Users/c-lop/Documents/GitHub/Radioterapia_SS/Guía_Planeacion_1/build/IMRT.pdf>] (c:\Users\c-lop\Documents\GitHub\Radioterapia_SS\Guía_Planeacion_1\build\GP1.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -799,20 +824,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
  ***********
 Package rerunfilecheck Info: File `GP1.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 2850C83D3341E45136D7FEDED15B39A3;11428.
  ) 
 Here is how much of TeX's memory you used:
- 26244 strings out of 474369
- 489143 string characters out of 5740514
- 1938754 words of memory out of 5000000
- 48213 multiletter control sequences out of 15000+600000
+ 26403 strings out of 474369
+ 491554 string characters out of 5740514
+ 1946754 words of memory out of 5000000
+ 48317 multiletter control sequences out of 15000+600000
  562552 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,9n,93p,694b,665s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on c:\Users\c-lop\Documents\GitHub\Radioterapia_SS\Guía_Planeacion_1\build\GP1.pdf (3 pages, 109334 bytes).
+ 83i,10n,93p,816b,521s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/c-lop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on c:\Users\c-lop\Documents\GitHub\Radioterapia_SS\Guía_Planeacion_1\build\GP1.pdf (12 pages, 259697 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 614 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 502 words of extra memory for PDF output out of 10000 (max. 10000000)
 
