@@ -233,3 +233,138 @@ p_pasteles_objeto <- ggplot(df_conteo_objeto, aes(x = "", y = Freq, fill = Var1)
 # Guardar el gráfico en un archivo
 ggsave(filename = paste0("pastel_objeto.jpg"), plot = p_pasteles_objeto, width = 10, height = 8)
 
+####Magnitud lineal####
+
+datos_filtrados <- datos %>%
+  filter(!(is.na(vrt_num) & is.na(lng_num) & is.na(lat_num))) %>%
+  mutate(magnitud_lineal = sqrt(ifelse(is.na(vrt_num), 0, vrt_num^2) +
+                                  ifelse(is.na(lng_num), 0, lng_num^2) +
+                                  ifelse(is.na(lat_num), 0, lat_num^2)))
+
+for (id_f in ids_pacientes) {
+  datos_paciente <- datos_filtrados %>% filter(id == id_f)
+  
+  # Verificar si hay datos después de filtrar NAs
+  if (nrow(datos_paciente) > 0) {
+    p_magnitud_l <- ggplot(datos_paciente, aes(x = fecha)) +
+      
+      geom_line(aes(y = magnitud_lineal, color = "ml", group = id_f), size = 1, na.rm = TRUE) +
+      geom_point(aes(y = magnitud_lineal, color = "ml", group = id_f), size = 2.5, na.rm = TRUE) +
+      
+      scale_y_continuous(
+        name = "Magnitud del error lineal [cm]",
+      ) +
+      
+      # Especificar los colores para cada línea
+      scale_color_manual(
+        values = c("ml" = "black")
+      ) +
+      
+      labs(
+        title = paste0("Magnitud del error lineal. ID: ", id_f),
+        x = "Fecha"
+      ) +
+      
+      # Personalizar el tema
+      theme_minimal() +
+      theme(
+        plot.title = element_text(face = "bold", hjust = 0.5),
+        axis.title.y.left = element_text(color = "black"),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1), 
+        legend.position = "none"
+      )
+    
+    # Guardar el gráfico en un archivo
+    ggsave(filename = paste0("grafico_magnitud_lineal_", id_f, ".jpg"), plot = p_magnitud_l, width = 10, height = 8)
+  }
+}
+
+####Magnitud angular####
+
+datos_filtrados <- datos %>%
+  filter(!(is.na(cabeceo_num) & is.na(balanceo_num))) %>%
+  mutate(magnitud_angular = sqrt(ifelse(is.na(cabeceo_num), 0, cabeceo_num^2) +
+                                  ifelse(is.na(balanceo_num), 0, balanceo_num^2)))
+
+for (id_f in ids_pacientes) {
+  datos_paciente <- datos_filtrados %>% filter(id == id_f)
+  
+  # Verificar si hay datos después de filtrar NAs
+  if (nrow(datos_paciente) > 0) {
+    p_magnitud_a <- ggplot(datos_paciente, aes(x = fecha)) +
+      
+      geom_line(aes(y = magnitud_angular, color = "ma", group = id_f), size = 1, na.rm = TRUE) +
+      geom_point(aes(y = magnitud_angular, color = "ma", group = id_f), size = 2.5, na.rm = TRUE) +
+      
+      scale_y_continuous(
+        name = "Magnitud del error angular [cm]",
+      ) +
+      
+      # Especificar los colores para cada línea
+      scale_color_manual(
+        values = c("ma" = "blue")
+      ) +
+      
+      labs(
+        title = paste0("Magnitud del error angular. ID: ", id_f),
+        x = "Fecha"
+      ) +
+      
+      # Personalizar el tema
+      theme_minimal() +
+      theme(
+        plot.title = element_text(face = "bold", hjust = 0.5),
+        axis.title.y.left = element_text(color = "black"),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1), 
+        legend.position = "none"
+      )
+    
+    # Guardar el gráfico en un archivo
+    ggsave(filename = paste0("grafico_magnitud_angular_", id_f, ".jpg"), plot = p_magnitud_a, width = 10, height = 8)
+  }
+}
+
+####Magnitud rotacional####
+
+datos_filtrados <- datos %>%
+  filter(!(is.na(rot_num))) %>%
+  mutate(magnitud_rot = sqrt(ifelse(is.na(rot_num), 0, rot_num^2)))
+
+for (id_f in ids_pacientes) {
+  datos_paciente <- datos_filtrados %>% filter(id == id_f)
+  
+  # Verificar si hay datos después de filtrar NAs
+  if (nrow(datos_paciente) > 0) {
+    p_magnitud_r <- ggplot(datos_paciente, aes(x = fecha)) +
+      
+      geom_line(aes(y = magnitud_rot, color = "mr", group = id_f), size = 1, na.rm = TRUE) +
+      geom_point(aes(y = magnitud_rot, color = "mr", group = id_f), size = 2.5, na.rm = TRUE) +
+      
+      scale_y_continuous(
+        name = "Magnitud del error rotacional [cm]",
+      ) +
+      
+      # Especificar los colores para cada línea
+      scale_color_manual(
+        values = c("mr" = "red")
+      ) +
+      
+      labs(
+        title = paste0("Magnitud del error rotacional. ID: ", id_f),
+        x = "Fecha"
+      ) +
+      
+      # Personalizar el tema
+      theme_minimal() +
+      theme(
+        plot.title = element_text(face = "bold", hjust = 0.5),
+        axis.title.y.left = element_text(color = "black"),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1), 
+        legend.position = "none"
+      )
+    
+    # Guardar el gráfico en un archivo
+    ggsave(filename = paste0("grafico_magnitud_rot_", id_f, ".jpg"), plot = p_magnitud_r, width = 10, height = 8)
+  }
+}
+
