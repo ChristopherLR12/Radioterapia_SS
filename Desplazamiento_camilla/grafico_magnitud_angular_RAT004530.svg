@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='720.00pt' height='576.00pt' viewBox='0 0 720.00 576.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: none;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA='>
+    <rect x='0.00' y='0.00' width='720.00' height='576.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpNjUuODB8NzE0LjUyfDIzLjE4fDQ3OS44NA=='>
+    <rect x='65.80' y='23.18' width='648.72' height='456.66' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNjUuODB8NzE0LjUyfDIzLjE4fDQ3OS44NA==)'>
+<polyline points='65.80,422.76 714.52,422.76 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='65.80,308.59 714.52,308.59 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='65.80,194.43 714.52,194.43 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='65.80,80.26 714.52,80.26 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='65.80,479.84 714.52,479.84 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='65.80,365.67 714.52,365.67 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='65.80,251.51 714.52,251.51 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='65.80,137.34 714.52,137.34 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='65.80,23.18 714.52,23.18 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='390.16,479.84 390.16,23.18 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<circle cx='390.16' cy='251.51' r='4.62' style='stroke-width: 0.71; stroke: #0000FF; fill: #0000FF;' />
+</g>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
+<text x='60.87' y='484.85' text-anchor='end' style='font-size: 14.00px;fill: #4D4D4D; font-family: "Arial";' textLength='39.68px' lengthAdjust='spacingAndGlyphs'>-0.050</text>
+<text x='60.87' y='370.69' text-anchor='end' style='font-size: 14.00px;fill: #4D4D4D; font-family: "Arial";' textLength='39.68px' lengthAdjust='spacingAndGlyphs'>-0.025</text>
+<text x='60.87' y='256.52' text-anchor='end' style='font-size: 14.00px;fill: #4D4D4D; font-family: "Arial";' textLength='35.02px' lengthAdjust='spacingAndGlyphs'>0.000</text>
+<text x='60.87' y='142.35' text-anchor='end' style='font-size: 14.00px;fill: #4D4D4D; font-family: "Arial";' textLength='35.02px' lengthAdjust='spacingAndGlyphs'>0.025</text>
+<text x='60.87' y='28.19' text-anchor='end' style='font-size: 14.00px;fill: #4D4D4D; font-family: "Arial";' textLength='35.02px' lengthAdjust='spacingAndGlyphs'>0.050</text>
+<text transform='translate(395.17,484.77) rotate(-90)' text-anchor='end' style='font-size: 14.00px;fill: #4D4D4D; font-family: "Arial";' textLength='70.04px' lengthAdjust='spacingAndGlyphs'>10/14/2024</text>
+<text x='390.16' y='567.58' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='38.89px' lengthAdjust='spacingAndGlyphs'>Fecha</text>
+<text transform='translate(15.50,251.51) rotate(-90)' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='181.40px' lengthAdjust='spacingAndGlyphs'>Magnitud del error angular [°]</text>
+<text x='390.16' y='14.93' text-anchor='middle' style='font-size: 13.20px; font-weight: bold; font-family: "Arial";' textLength='265.10px' lengthAdjust='spacingAndGlyphs'>Magnitud del error angular. ID: RAT004530</text>
+</g>
+</svg>
