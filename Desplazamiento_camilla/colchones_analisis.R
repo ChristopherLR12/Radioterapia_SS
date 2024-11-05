@@ -687,13 +687,13 @@ print(resumen_magnitud_angular)
 
 # Filtrar datos para los dos grupos
 grupo_sbrt <- datos %>% filter(tipo == "SBRT")  # Pacientes en el plan SBRT
-grupo_no_sbrt <- datos %>% filter(tipo != "SBRT")  # Pacientes en otros planes
+grupo_no_sbrt <- datos %>% filter(tipo == "Fx")  # Pacientes en otros planes
 
 # Prueba t para magnitud lineal
-t_test_lineal <- t.test(magnitud_lineal ~ tipo, data = datos_filtrados_lineal, subset = tipo %in% c("SBRT", "No SBRT"), var.equal = FALSE)
+t_test_lineal <- t.test(magnitud_lineal ~ tipo, data = datos_filtrados_lineal, subset = tipo %in% c("SBRT", "Fx"), var.equal = FALSE)
 print(t_test_lineal)
 
 # Prueba t para magnitud angular
-t_test_angular <- t.test(magnitud_angular ~ tipo, data = datos_filtrados_angular, subset = tipo %in% c("SBRT", "No SBRT"), var.equal = FALSE)
+t_test_angular <- t.test(magnitud_angular ~ tipo, data = datos_filtrados_angular, subset = tipo %in% c("SBRT", "Fx"), var.equal = FALSE)
 print(t_test_angular)
 
